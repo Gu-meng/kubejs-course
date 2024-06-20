@@ -1,6 +1,6 @@
 # Table of contents
 
-* [kubejs-course](README.md)
+* [kubejs教程-1.20.1](README.md)
 * [kjs基础](kjs-ji-chu/README.md)
   * [前言](kjs-ji-chu/qian-yan.md)
   * [认识kjs的文件夹](kjs-ji-chu/1.-wen-jian-fen-lei.md)
@@ -23,7 +23,7 @@
   * [4.世界生成](kjs-jin-jie/4.-shi-jie-sheng-cheng.md)
   * [global全局变量](kjs-jin-jie/global-quan-ju-bian-liang.md)
 * [kjs模组](kjs-mo-zu/README.md)
-  * [AdvancementJs](kjs模组/AdvancementJs.md)
+  * [AdvancementJs](kjs-mo-zu/AdvancementJs.md)
   * [ArsNouveauJs](kjs-mo-zu/arsnouveaujs.md)
   * [BotaniaJs](kjs-mo-zu/botaniajs.md)
   * [BotanyPotsJs](kjs-mo-zu/botanypotsjs.md)
