@@ -2,7 +2,7 @@
 
 * [kubejs教程-1.20.1](README.md)
 * [kjs基础](kjs-ji-chu/README.md)
-  * [前言](kjs-ji-chu/qian-yan.md)
+  * [前言](kjs-ji-chu/0.qian-yan.md)
   * [认识kjs的文件夹](kjs-ji-chu/1.-wen-jian-fen-lei.md)
   * [基础写法](kjs-ji-chu/2.-ji-chu-xie-fa-tian-jia.md)
   * [基础写法-删除和修改](kjs-ji-chu/3.-ji-chu-xie-fa-shan-chu-he-xiu-gai.md)
