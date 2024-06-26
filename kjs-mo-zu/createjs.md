@@ -203,5 +203,26 @@ const incomplete = 'create:incomplete_precision_mechanism'
 ```
 这里值得一提的是，目前官方总共提供只有上面的四种方式进行机器参与
 
+注:序列组装的半成品是可以使用原版的物品的
+
+### 序列组装添加物品为半成品
+在序列组装是可以自定义半成品的，这里需要写在游戏加载(startup_scripts)时的文件夹内
+```js
+StartupEvents.registry("item", event=>{
+    event.create("meng:diamond","create:sequenced_assembly")
+})
+```
+在`event.create`里的第一个参数为:**物品id**第二个参数为**物品类型**
+
 ### 神秘配方
-null
+神秘配方从本质上来说只是一个配方显示，他并不是一个可以被合成的配方，所以它并不需要添加任何配方事件
+只需要在客户端加载(client_scripts)的文件夹内进行书写就可以了
+像下面这样
+
+```js
+let MysteriousItemConversionCategory = Java.loadClass('com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory')
+let ConversionRecipe = Java.loadClass('com.simibubi.create.compat.jei.ConversionRecipe')
+
+MysteriousItemConversionCategory.RECIPES.add(ConversionRecipe.create('apple', "minecraft:diamond"))
+```
+这样写的就是代表苹果通过神秘配方转换为钻石，但是这个神秘配方是什么，怎么做，得魔改作者们自己完成，他只是提供一个JEI提醒的，并不具备任何功能
