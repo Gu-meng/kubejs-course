@@ -53,8 +53,8 @@ StartupEvents.registry("item", event => {
     },
 }
 ```
-下面是百科提供的详细图
-![mcwiki的sounds.json详细图](../../../imgs/mcwiki-sounds-json.png)
+[关于sounds.json的文件结构](../../../ti-wai-hua/sounds-json.md)
+
 ## 本地化和材质
 接下来就是最简单的对物品进行汉化，让物品显示中文文本
 
@@ -64,7 +64,7 @@ StartupEvents.registry("item", event => {
 ```json
 {
     "item.meng.my_music": "音乐唱片",
-    "item.meng.my_music.desc": "我的音乐 - 私人歌手",
+    "item.meng.my_music.desc": "我的音乐 - 私人歌手"
 }
 ```
 第一个为唱片本身的文本信息
