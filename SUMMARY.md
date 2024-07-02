@@ -48,3 +48,4 @@
   * [权重](ti-wai-hua/quan-zhong.md)
   * [战利品上下文](ti-wai-hua/zhan-li-pin-shang-xia-wen.md)
   * [sounds.json 结构](ti-wai-hua/sounds-json.md)
+  * [原版宝箱战利品id](ti-wai-hua/bao-xiang-zhan-li-pin-biao-id.md)
