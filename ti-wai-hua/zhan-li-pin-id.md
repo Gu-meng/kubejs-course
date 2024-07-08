@@ -46,3 +46,21 @@
 |    village/village_toolsmith     |     村庄工具匠小屋   |
 |    village/village_weaponsmith   |     村庄武器匠小屋   |
 |        woodland_mansion          |        林地府邸     |
+
+# 村民礼物战利品
+|   战利品id  |  村民职业  |
+| armorer_gift |  盔甲匠  |
+| butcher_gift |   屠夫  |
+|  cartographer_gift | 制图师 |
+|  cleric_gift |  牧师  |
+|  farmer_gift |  农民  |
+| fisherman_gift | 渔夫 |
+|  fletcher_gift | 制箭师 |
+| leatherworker_gift | 皮匠 |
+|  librarian_gift | 图书管理员 |
+|  mason_gift | 石匠 |
+|   shepherd_gift |  牧羊人 |
+|  toolsmith_gift | 工具匠 |
+| weaponsmith_gift | 武器匠 |
+
+# 全局战利品

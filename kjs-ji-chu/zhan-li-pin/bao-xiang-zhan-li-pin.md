@@ -15,7 +15,7 @@ ServerEvents.chestLootTables(event=>{
     })
 })
 ```
-使用`addChest()`的第一个参数，是需要覆盖掉的宝箱战利品表的名称([原版宝箱战利品表](../../ti-wai-hua/bao-xiang-zhan-li-pin-biao-id.md))
+使用`addChest()`的第一个参数，是需要覆盖掉的宝箱战利品表的名称([原版宝箱战利品表](/ti-wai-hua/zhan-li-pin-id.md/#宝箱战利品id))
 
 如果你不需要覆盖掉而是**直接在原有的基础上进行添加**，则可以使用`modify()`,参数和`addChest()`一样
 
