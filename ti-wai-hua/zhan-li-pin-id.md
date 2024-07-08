@@ -49,6 +49,7 @@
 
 # 村民礼物战利品
 |   战利品id  |  村民职业  |
+| :----------: | :-----------: |
 | armorer_gift |  盔甲匠  |
 | butcher_gift |   屠夫  |
 |  cartographer_gift | 制图师 |
