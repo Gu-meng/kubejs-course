@@ -122,7 +122,7 @@ StartupEvents.registry("enchantment",event =>{
 
 ## 伤害加成和伤害减免
 我们可以直接在附魔注册时候就写好，对生物的伤害加成又或者对穿戴者的伤害减免
-### 伤害加成
+### 伤害加成(damageBonus)
 该方法实现了对亡灵系生物造成额外附魔等级*10点的伤害
 ```js
 StartupEvents.registry("enchantment",event =>{
@@ -135,8 +135,10 @@ StartupEvents.registry("enchantment",event =>{
             })
 })
 ```
-### 伤害减免
-该方法实现了对亡灵系生物减少额外附魔等级*10点的伤害
+### 伤害减免(damageProtection)
+该方法实现了对亡灵系生物减少额外附魔等级*20点的伤害
+
+该示例请勿直接使用，未知问题导致没有减少伤害，需后续做出修改，仅供参考
 ```js
 StartupEvents.registry("enchantment",event =>{
     event.create("meng:undead_protect")
@@ -183,7 +185,7 @@ StartupEvents.registry("enchantment",event =>{
 
 在`postHurt`中第一个参数`living`代表了受伤的生物 第二个参数`entity`代表了造成伤害的生物 第三个参数`level`代表了附魔的等级
 
-在本代码中，使用`living.heal(level * 2)2`来实现被攻击者生命恢复的效果 `entity.attack(level)`来实现攻击者收到伤害的效果，模拟是因为吸取导致的扣血
+在本代码中，使用`living.heal(level * 2)`来实现被攻击者生命恢复的效果 `entity.attack(level)`来实现攻击者收到伤害的效果，模拟是因为吸取导致的扣血
 ### 攻击事件(postAttack)
 下面实现了使用此属性的武器攻击后，会窃取吸取到使用者身上
 ```js
