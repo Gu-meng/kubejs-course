@@ -7,6 +7,7 @@
 
 如果是**7.0以下**请这样导包`const $Rarity  = Java.loadClass("net.minecraft.world.item.Rarity")`
 |  等级  |  含义  | 对应颜色 | 调用方法  |
+| :----: | :---: | :------: | :------------: |
 | Common |  常见  |   白色  |  $Rarity.COMMON | 
 | Uncommon | 罕见 |   黄色  |  $Rarity.UNCOMMON |
 |   Rare   | 稀有 |   青色  |  $Rarity.RARE |

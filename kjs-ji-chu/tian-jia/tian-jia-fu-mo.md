@@ -11,6 +11,7 @@ StartupEvents.registry("enchantment",event =>{
 # 属性添加
 ## 设置可被附魔位置
 |   方法名   |    传入参数    |    方法用处    |
+| :-----------: | :----------: | :------------------: |
 |   armor()    |   无需传参     |   使盔甲可被附魔  |
 | armorHead()  |   无需传参     |   使头盔可被附魔  |`
 | armorChest() |   无需传参     |   使胸甲可被附魔  |
@@ -32,6 +33,7 @@ StartupEvents.registry("enchantment",event =>{
 
 ### 附魔物品类型
 |  参数  |   描述  |
+| :--------: |:-------: |
 | fishing_rod | 钓鱼竿 |
 | wearable | 可穿戴的 |
 | trident | 三叉戟 |
@@ -50,6 +52,7 @@ StartupEvents.registry("enchantment",event =>{
 ## 设置稀有度
 [关于稀有度](/ti-wai-hua/xi-you-du.md)
 |   方法名   |    传入参数    |    方法用处    |
+| :-----------: | :----------: | :------------------: |
 | rarity(rarity) |  稀有度   | [添加稀有度](/ti-wai-hua/xi-you-du.md/#稀有度的等级) |
 | uncommon()  |   无需传参   |  设置稀有度为罕见 |
 | rare()  |    无需传参  |  设置稀有度为稀有 |
@@ -57,6 +60,7 @@ StartupEvents.registry("enchantment",event =>{
 
 ## 常用方法
 |   方法名   |    传入参数    |    方法用处    |
+| :-----------: | :----------: | :------------------: |
 | minLevel(int) |  整型(数字) |  设置附魔属性的最小等级 |
 | maxLevel(int) |  整型(数字) |  设置附魔属性的最大等级 |
 | untradeable() |    无需传参   |  设置该附魔书无法被村民售卖 |
