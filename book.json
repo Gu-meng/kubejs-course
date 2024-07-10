@@ -1,0 +1,8 @@
+{
+    "plugins": ["3-ba"],
+    "pluginsConfig": {
+        "3-ba": {
+            "token": "20241ce0288871babc0537bacd4610e9"
+        }
+    }
+}
