@@ -135,21 +135,60 @@ StartupEvents.registry("enchantment",event =>{
             })
 })
 ```
-### 伤害减免(damageProtection)
-该方法实现了对亡灵系生物减少额外附魔等级*20点的伤害
+`level`为附魔等级
 
-该示例请勿直接使用，未知问题导致没有减少伤害，需后续做出修改，仅供参考
+`entityType`是生物类型
+
+### 伤害减免(damageProtection)
+类似于保护、火焰保护等的伤害减少机制
+
+所以在写之前我们得明白[保护的机制](https://zh.minecraft.wiki/w/%E7%9B%94%E7%94%B2%E6%9C%BA%E5%88%B6#%E4%BF%9D%E6%8A%A4%E9%AD%94%E5%92%92%E6%9C%BA%E5%88%B6)是什么
+
+简单来说当返回值等于25时玩家将绝对免疫这次伤害,但是因为mc的游戏机制问题，返回值最多只有20，超过20的部分也只有20
+
+更加详细的可以查看[mcwiki的保护机制](https://zh.minecraft.wiki/w/%E7%9B%94%E7%94%B2%E6%9C%BA%E5%88%B6#%E4%BF%9D%E6%8A%A4%E9%AD%94%E5%92%92%E6%9C%BA%E5%88%B6)或者文档内的[附魔保护机制](/ti-wai-hua/fu-mo-bao-hu-ji-zhi.md)
+
 ```js
 StartupEvents.registry("enchantment",event =>{
     event.create("meng:undead_protect")
             .armor()
-            .damageProtection((level,entityType)=>{
-                if (entityType == "undead"){
-                    return level * 20
+            .damageProtection((level,damageSource)=>{
+                try{
+                    /**
+                    * @type {$LivingEntity}
+                    */
+                    let damageSourceLiving = damageSource.getActual() //获取导致造成伤害的生物
+                    let LivingEntityType = damageSourceLiving.getEntityType() //获取造成伤害的实体类型
+                    //判断造成伤害的生物是否为 监守者
+                    if(damageSourceLiving.toShortString() == "warden"){
+                        return level * 5
+                    }
+                    let damageSourceEntity = damageSource.getImmediate() //获取造成受伤的实体
+                }catch(e){
+                    //如果不是实体导致的伤害，如燃烧、摔落、溺水、药水效果等导致的伤害
+                    //会因为报错进入到这里，就可以在这里进行处理
+                    console.log(damageSource.getType());
+                    if (damageSource.getType() == "lava"){
+                        return level * 2
+                    }
                 }
+                
             })
 })
 ```
+这里我们的区别一下`getActual()`和`getImmediate()`的区别
+
+举个例子，小白(骷髅)射出来的箭对玩家造成伤害了，那么骷髅为`getActual()`，骷髅射出来的箭则为`getImmediate()`
+
+所以这里得进行一个判断，自己到底需要减少哪一部分的伤害
+
+这里使用try-catch包裹起来是因为玩家受到伤害时，不一定是生物或者实体造成的，也有可能是玩家摔了一跤或者燃起来了，又或者被药水效果导致的扣血伤害，这些都不是实体造成伤害，所以我们直接使用`getActual()`和`getImmediate()`会导致代码报错，所以用[try-catch](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/try...catch)包裹起来“处理报错”
+
+既然不是实体造成的伤害，我们就需要去判断他的伤害类型，所以使用`damageSource.getType()`来获取到伤害类型，`damageSource.getType()`返回的是一个字符串类型，所以我们可以直接使用`if (damageSource.getType() == "lava")`来判断造成伤害的类型是否为岩浆
+
+这里使用了`console.log(damageSource.getType())`在`logs\kubejs\startup.log`下输出造成伤害类型，我们魔改不确定一个是那种伤害类型，可以将该属性附魔在盔甲上，在游戏里受到你需要判断的属性的伤害就可以获取到了
+
+
 ### 生物类型列表
 非常可惜的是，伤害加成或者减免无法对某一个生物进行干预，只能干预某一种生物类别，下面就是全部的生物类别
 1. unknown -- 没有属性的生物
@@ -209,4 +248,4 @@ StartupEvents.registry("enchantment",event =>{
 ```
 使用`if (entity.isLiving())`判断被攻击的是否为一个活体生物,如果是则给使用者回复等同于附魔等级的血量
 
-# 最后编辑时间 2024年7月10日-05点05分
+# 最后编辑时间 2024年7月11日-05点05分

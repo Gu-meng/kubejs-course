@@ -55,3 +55,4 @@
   * [原版战利品id](ti-wai-hua/zhan-li-pin-id.md)
   * [稀有度](/ti-wai-hua/xi-you-du.md)
   * [命名空间](/ti-wai-hua/ming-ming-kong-jian.md)
+  * [附魔保护机制](/ti-wai-hua/fu-mo-bao-hu-ji-zhi.md)
