@@ -58,3 +58,4 @@
   * [稀有度](/ti-wai-hua/xi-you-du.md)
   * [命名空间](/ti-wai-hua/ming-ming-kong-jian.md)
   * [附魔保护机制](/ti-wai-hua/fu-mo-bao-hu-ji-zhi.md)
+* [项目分享](/KubeJS-Projects-Share/README.md) 
