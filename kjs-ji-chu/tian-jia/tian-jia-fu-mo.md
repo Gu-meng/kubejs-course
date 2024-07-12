@@ -160,7 +160,7 @@ StartupEvents.registry("enchantment",event =>{
                     let damageSourceLiving = damageSource.getActual() //获取导致造成伤害的生物
                     let LivingEntityType = damageSourceLiving.getEntityType() //获取造成伤害的实体类型
                     //判断造成伤害的生物是否为 监守者
-                    if(damageSourceLiving.toShortString() == "warden"){
+                    if(LivingEntityType.toShortString() == "warden"){
                         return level * 5
                     }
                     let damageSourceEntity = damageSource.getImmediate() //获取造成受伤的实体
