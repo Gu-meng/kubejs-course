@@ -60,4 +60,4 @@
   * [附魔保护机制](/ti-wai-hua/fu-mo-bao-hu-ji-zhi.md)
 * [项目分享](/KubeJS-Projects-Share/README.md) 
   * [工作台物品附魔](/KubeJS-Projects-Share/ProjectsOfWolf/EnchantOnTable.md)
-  * [工作台物品附魔](/KubeJS-Projects-Share/Meng/AltarComposition.md)
+  * [祭坛合成](/KubeJS-Projects-Share/Meng/AltarComposition.md)
