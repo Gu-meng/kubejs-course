@@ -34,7 +34,7 @@ body:
   - type: textarea
     attributes:
       label: 请提供发生错误的代码
-      description: 请提供发生错误的代码,并使用反引号```附上它,如果代码过长请上传至该链接https://mclo.gs/,并将生成的代码写在上面(无需写```)
+      description: 请提供发生错误的代码,并使用反引号```附上它,如果代码过长请上传至该链接https://mclo.gs ,并将生成的代码写在上面(无需写反引号)
       placeholder: |
         ```
         代码本体
