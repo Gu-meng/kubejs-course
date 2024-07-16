@@ -6,3 +6,5 @@
 该项目的[开源地址](https://gitee.com/gumengmengs/kubejs-course)
 
 孤梦的[bilibili主页](https://space.bilibili.com/16632546)
+
+[项目问题反馈](https://gitee.com/gumengmengs/kubejs-course/issues/new/choose)
