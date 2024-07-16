@@ -1,10 +1,12 @@
 # 什么是命名空间
 来自[mcwiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn)的解释
+
 命名空间ID（Namespaced identifier，或译为命名空间标识符）、资源路径（Resource location、资源标识符（Resource identifier）或命名空间字符串（Namespaced string）是用来指明和识别游戏中特定对象而又能避免潜在的歧义和冲突的一种方式。
 # 命名空间一般用来做什么
 命名空间ID在游戏内部为资源路径（Resource location），主要由以下两部分组成：
 
 命名空间（Namespace）：一个字符串，用于标识资源的唯一性。游戏的默认命名空间为minecraft
+
 路径（Path）：一个字符串。在数据包中，一般也反应了该资源的文件路径。有时也仅仅作为一种标识名。
 
 ## 在注册物品时有什么用
