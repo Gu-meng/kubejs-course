@@ -24,13 +24,13 @@ body:
         - Fabric
         - NeoForge
         - Quilt
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: KubeJs模组版本
-      validations:
-        required: true 
+    validations:
+      required: true 
   - type: textarea
     attributes:
       label: 请提供发生错误的代码
@@ -39,19 +39,19 @@ body:
         ```
         代码本体
         ```
-      validations:
-        required: true 
+    validations:
+      required: true 
   - type: textarea
     attributes:
       label: 请提供发生错误的信息
       description: 如果是kubejs直接报错则在文件路径：logs/kubejs里,哪个文件报错就上传哪个文件的报错信息，不要将整个文件上传上来，这对我们判断错误一点帮助没有
-      validations:
-        required: true 
+    validations:
+      required: true 
   - type: textarea
     attributes:
       label: 你希望代码实现什么效果
-      validations:
-        required: true 
+    validations:
+      required: true 
   - type: textarea
     attributes:
       label: 你参考的资料
