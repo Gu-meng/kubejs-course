@@ -9,7 +9,7 @@
 | 主事件 | 子事件 | 用处 | 示例 |
 | :-----------: | :------: | :-----: | :---------: | 
 | StartupEvents | init | - | - |
-| StartupEvents | registry | startup_scripts | 注册各种游戏内容 | - |
+| StartupEvents | registry | 注册各种游戏内容 | [链接](./tian-jia/README.md) |
 | WorldgenEvents | add | - | - |
 | WorldgenEvents | remove | - | - |
 | ItemEvents | modification | 修改物品属性 | - |
