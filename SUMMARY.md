@@ -4,6 +4,7 @@
 * [kjs基础](kjs-ji-chu/README.md)
   * [前言](kjs-ji-chu/qian-yan.md)
   * [认识kjs的文件夹](kjs-ji-chu/wen-jian-fen-lei.md)
+  * [所有事件使用](kjs-ji-chu/AllEvent.md)
   * [基础写法-配方添加](kjs-ji-chu/ji-chu-xie-fa-tian-jia.md)
   * [基础写法-删除和修改](kjs-ji-chu/ji-chu-xie-fa-shan-chu-he-xiu-gai.md)
   * [修改窗口标题和logo](kjs-ji-chu/xiu-gai-chuang-kou-biao-ti-he-logo.md)
