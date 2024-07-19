@@ -11,8 +11,7 @@ ServerEvents.recipes(event => {
 		'DDD',
 		'   ',
 		'W W'
-	    ],
-        {
+	    ], {
 		    D: 'minecraft:diamond',
 		    W: 'minecraft:white_wool'
         }
@@ -93,11 +92,15 @@ ServerEvents.recipes(event => {
 可以看到，在上面的所有配方中，我们都没有进行添加配方id，但是并没有像crt一样报错，这是因为kjs自动生成了一个配方id，我们也可以将这个配方id自己进行添加，只需要在最后加上一个`.id(id名称)`就像下面一样
 ```js
 ServerEvents.recipes(event => {
-    event.shapeless(Item.of('minecraft:sand',2),[
-        'minecraft:stone','minecraft:beacon','minecraft:white_wool','minecraft:enchanting_table'
+    event.shapeless(Item.of('minecraft:sand', 2), [
+        'minecraft:stone',
+		'minecraft:beacon',
+		'minecraft:white_wool',
+		'minecraft:enchanting_table'
     ]).id("meng_sand");
 });
 ```
+[**配方ID详细讲解传送门**](/kjs-ji-chu/recipe-id.md)
 这里注意一下，如果你直接像上面一样写，该配方id则为minecraft下的配方
 
 但是如果你像这样写:`meng:sand`，那么该配方则是在meng这个路径下的sand配方了，这个就类似于模组名+配方名的概念了
