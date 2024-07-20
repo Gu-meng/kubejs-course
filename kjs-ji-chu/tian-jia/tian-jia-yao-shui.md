@@ -1,5 +1,5 @@
 # 注册药水
-kubejs的注册药水≠注册药水效果，药水是将药水效果进行装瓶，生物饮用后给予生物药水效果
+kubejs的注册药水≠注册药水效果，药水是将药水效果进行装瓶，生物饮用后给予生物药水效果,[关于注册药水效果](./tian-jia-yao-shui-xiao-guo.md)
 ```js
 StartupEvents.registry("potion",event =>{
     event.create("meng:my_potion")

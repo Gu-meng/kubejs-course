@@ -2,7 +2,9 @@
 这章主要是教会大家如何添加以及修改别的Mod的本地化文件(语言文件)
 
 * ### 文件路径
-  `lang`文件主要存储于`assets/${modid}/lang`,不同的国家也有着不同的文件名称,具体请查看[**Wiki**](https://zh.minecraft.wiki/w/语言),而各文件都以`json`作为后缀,例如`en_us.json` `zh_cn.json` `zh_tw.json`等 
+  `lang`文件主要存储于`assets/${modid}/lang`,不同的国家也有着不同的文件名称,具体请查看[**Wiki**](https://zh.minecraft.wiki/w/语言)或者文档[内部链接](/ti-wai-hua/lang-wen-jian-ming.md),而各文件都以`json`作为后缀,例如`en_us.json` `zh_cn.json` `zh_tw.json`等 
+
+  `minecraft:sand` minecraft是modid
 
 * ### 写法
   * `lang`主要由本地化键名和文本组成,例如
@@ -41,4 +43,5 @@
     Forge 或 NeoForge 的 Modid 在 ModFile.jar/META-INF/mods.toml
     </details>
   你也可以复制`ModFile.jar/assets`下的文件夹名称,然后自己创建一个文件夹,随后和开头所说的一样,`${modid}`下再创建一个`lang`文件,随后把需要修改的`lang`文件解压进去便是,如果是汉化Mod也一样,把原先的`lang`文件解压除来后改名为`zh_cn.json`
+
   **一切的Modid只能由`小写字母,数字和下划线(a-z,0-9和_)`组成**
