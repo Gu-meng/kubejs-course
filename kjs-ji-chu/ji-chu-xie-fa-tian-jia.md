@@ -11,11 +11,10 @@ ServerEvents.recipes(event => {
 		'DDD',
 		'   ',
 		'W W'
-	    ], {
-		    D: 'minecraft:diamond',
-		    W: 'minecraft:white_wool'
-        }
-    );
+	], {
+		D: 'minecraft:diamond',
+		W: 'minecraft:white_wool'
+    });
 });
 ```
 在上面代码中，第一个参数是输出物品和输出物品个数，这里是用的字符串形式表示，当然你要是不喜欢这么写，也可以使用`Item.of(物品id,输出个数)`这样来写

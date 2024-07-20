@@ -14,8 +14,14 @@
 ### 一些描述
 下面是所有的代码最外层形式，下面展示的只是局部代码
 ```js
-ServerEvents.recipes(e =>{
-    const create = e.recipes.create
+ServerEvents.recipes((event) =>{
+	/* 
+	 * 这里是一个很基础的recipes事件的结构
+	 * 不单单限制于Create这个Mod
+	 * 有其他Mod支持的时候直接在大括号内写便是
+	 * 如果不知道哪些Mod支持请使用ProbeJS
+	*/
+    const { create } = event.recipes
     xxxxxxxxxxxxxx  
 })
 ```
@@ -46,19 +52,39 @@ Item.of("物品id").withChance(0.5)
 ### 动力辊压机
 ```js
 //压块塑性
-create.compacting("minecraft:golden_apple","minecraft:apple")
+create.compacting("minecraft:golden_apple", [
+	"minecraft:apple"
+])
 //压块-加热
-create.compacting('minecraft:iron_nugget','minecraft:iron_ore').heated()
+create.compacting('minecraft:iron_nugget', [
+	'minecraft:iron_ore'
+]).heated()
 // 压块-超级加热
-create.compacting('minecraft:diamond',"minecraft:deepslate_diamond_ore").superheated()
+create.compacting('minecraft:diamond', [
+	'minecraft:deepslate_diamond_ore'
+]).superheated()
 // 压块-流体
-create.compacting(Fluid.water(1000),Fluid.lava(1000))
+create.compacting(Fluid.of('minecraft:water', 1000), [
+	Fluid.of('minecraft:lava', 1000)
+])
 // 压块-概率输出
-create.compacting(["minecraft:stone",Item.of("diamond").withChance(0.01)],'minecraft:magma_block')
+create.compacting([
+	"minecraft:stone", 
+	Item.of("diamond").withChance(0.01)
+], [
+	'minecraft:magma_block'
+])
 // 压片
-create.pressing("minecraft:enchanted_golden_apple","minecraft:golden_apple")
+create.pressing("minecraft:enchanted_golden_apple",[
+	"minecraft:golden_apple"
+])
 // 压片 - 概率输出
-create.pressing(['minecraft:stone',Item.of("diamond").withChance(0.5)],'minecraft:crying_obsidian')
+create.pressing([
+	'minecraft:stone',
+	Item.of("diamond").withChance(0.5)
+], [
+	'minecraft:crying_obsidian'
+])
 ```
 简单解释一下再上面的代码
 
@@ -70,7 +96,7 @@ create.pressing(['minecraft:stone',Item.of("diamond").withChance(0.5)],'minecraf
 ### 动力搅拌机
 ```js
 // 混合搅拌 - 多个输入
-create.mixing("minecraft:grass_block",[Fluid.water(500),"minecraft:dirt"])
+create.mixing("minecraft:grass_block",[Fluid.of('minecrft:water', 500),"minecraft:dirt"])
 // 混合搅拌 - 加热
 create.mixing('minecraft:cooked_cod','minecraft:cod').heated()
 // 混合搅拌 - 超级加热

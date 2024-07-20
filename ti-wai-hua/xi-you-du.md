@@ -6,12 +6,12 @@
 如果是**7.0以上**请这样导包`const { $Rarity } = require("packages/net/minecraft/world/item/$Rarity")`
 
 如果是**7.0以下**请这样导包`const $Rarity  = Java.loadClass("net.minecraft.world.item.Rarity")`
-|  等级  |  含义  | 对应颜色 | 调用方法  |  对应字符串  |
-| :----: | :---: | :------: | :------------: | :-----: |
-| Common |  常见  |   白色  |  $Rarity.COMMON | common |
-| Uncommon | 罕见 |   黄色  |  $Rarity.UNCOMMON | uncommon |
-|   Rare   | 稀有 |   青色  |  $Rarity.RARE | rare |
-|   Epic   | 史诗 |  品红色 |   $Rarity.EPIC | epic |
+|   等级   | 含义  | 对应颜色 |     调用方法     | 对应字符串 |
+| :------: | :---: | :------: | :--------------: | :--------: |
+|  Common  | 常见  |   白色   |  $Rarity.COMMON  |   common   |
+| Uncommon | 罕见  |   黄色   | $Rarity.UNCOMMON |  uncommon  |
+|   Rare   | 稀有  |   青色   |   $Rarity.RARE   |    rare    |
+|   Epic   | 史诗  |  品红色  |   $Rarity.EPIC   |    epic    |
 
 ## 一些介绍
 [介绍来自mcwiki](https://zh.minecraft.wiki/w/%E7%A8%80%E6%9C%89%E5%BA%A6?variant=zh-cn)

@@ -2,7 +2,7 @@
 **注：以下内容来自mcwiki**
 ```json
 {
-    "声音注册id":{
+    "声音注册id": {
         "replace": (true / false),
         "subtitle": "播放音乐",
         "sounds":[
