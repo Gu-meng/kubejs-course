@@ -79,5 +79,5 @@
   * [Blockbench基础使用](/ti-wai-hua/blockbench-ji-chu.md)
   * [lang文件命名对照表](/ti-wai-hua/lang-wen-jian-ming.md)
 * [项目分享](/KubeJS-Projects-Share/README.md) 
-  * [工作台物品附魔](/KubeJS-Projects-Share/ProjectsOfWolf/EnchantOnTable.md)
+  * [工作台物品附魔](/KubeJS-Projects-Share/Wolf/EnchantOnTable.md)
   * [祭坛合成](/KubeJS-Projects-Share/Meng/AltarComposition.md)
