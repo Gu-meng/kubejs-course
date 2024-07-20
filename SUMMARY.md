@@ -45,7 +45,7 @@
   * [机械动力和KubeJs](kjs-mo-zu/createjs.md)
   * [PonderJs(让我想想)](kjs-mo-zu/PonderJs/README.md)
     * [前言](/kjs-mo-zu/PonderJs/Foreword.md)
-    * [Ponder](/kjs-mo-zu/PonderJs/Ponder)
+    * [Ponder](/kjs-mo-zu/PonderJs/Ponder.md)
     * [PonderTag](/kjs-mo-zu/PonderJs/Tags.md)
     * [本地化](/kjs-mo-zu/PonderJs/Translate.md)
     * [基本概念和实用工具](/kjs-mo-zu/PonderJs/Utils.md)
