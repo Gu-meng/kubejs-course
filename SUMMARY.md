@@ -35,7 +35,7 @@
 * [kjs进阶](kjs-jin-jie/README.md)
   * [配方添加进阶](kjs-jin-jie/pei-fang-he-cheng-jin-jie.md)
   * [自定义指令](kjs-jin-jie/zi-ding-yi-zhi-ling.md)
-  * [4.世界生成](kjs-jin-jie/4.-shi-jie-sheng-cheng.md)
+  * [世界生成](kjs-jin-jie/worldgen)
   * [global全局变量](kjs-jin-jie/global-quan-ju-bian-liang.md)
 * [kjs模组](kjs-mo-zu/README.md)
   * [AdvancementJs](kjs-mo-zu/AdvancementJs.md)
