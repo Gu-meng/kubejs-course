@@ -41,13 +41,13 @@ effect(
 StartupEvents.registry("item", event => {
     event.create("meng:my_food")
         .food(foodBuilder=>{
-            foodBuilder.effect("minecraft:speed",20*20,0,1)
+            foodBuilder.effect("minecraft:speed",20*20,0,0.5)
         })
 })
 ```
+当玩家食用该物品后会给玩家一个20秒的1级速度效果，生效概率为50%
 
 ### 移除药水效果
-虽然但是好像移除失败了（；´д｀）ゞ
 ```js
 StartupEvents.registry("item", event => {
     event.create("meng:my_food2")
@@ -56,6 +56,7 @@ StartupEvents.registry("item", event => {
         })
 })
 ```
+虽然但是好像移除失败了（；´д｀）ゞ
 
 ## 使用后事件
 ```js
@@ -76,6 +77,7 @@ StartupEvents.registry("item", event => {
         })
 })
 ```
+如果食用该食物的是玩家，则给玩家返回一个碗(这里判断了一下是怕食用者不是玩家)
 
 ### 事件里可调用的方法
 |   方法名    |    返回类型     |
