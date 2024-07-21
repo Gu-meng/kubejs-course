@@ -11,40 +11,62 @@
 7. create-0.5.1f
 8. kubejs create-2001.2.5.bulid.2
 
+### 配方类型表格(不代表全部,仅仅是常用的,带有`[]`说明可以写入多个输入或输出或是数组)
+烘烤和烧炼读取的是原版的配方,因此没有专门的配方类型
+`.haetLevel`需要额外Mod [**CreateHeatJS**](/kjs-mo-zu/CreateHeatJS.md)的支持
+|                                         配方格式                                          |      配方类型       |                  补充说明                   |
+| :---------------------------------------------------------------------------------------: | :-----------------: | :-----------------------------------------: |
+|                          `create.conversion(output[], input[])`                           |        转换         |           参考两种齿轮箱和信息表            |
+|                           `create.crushing(output[], input[])`                            |        粉碎         |                      -                      |
+|                            `create.milling(output[], input[])`                            |        磨粉         |                      -                      |
+|                            `create.cutting(output[], input[])`                            |        切割         |                      -                      |
+|                            `create.mixing(output[], input[])`                             |      动力搅拌       | 可以在其后可加`.heated()`和`.superheated()` |
+|                          `create.compacting(output[], input[])`                           |      压块塑形       | 可以在其后可加`.heated()`和`.superheated()` |
+|                      `create.sandpaperPolishing(output[], input[])`                       |      砂纸打磨       |                      -                      |
+|                           `create.splashing(output[], input[])`                           |   洗涤(鼓风机+水)   |                      -                      |
+|                           `create.haunting(output[], input[])`                            | 缠魂(鼓风机+灵魂火) |                      -                      |
+|                           `create.deploying(output[], input[])`                           |       机械手        |                      -                      |
+|                       `create.item_application(output[], input[])`                        |      直接使用       |       参考几种机壳的配方(1.18及以上)        |
+|                            `create.filling(output[], input[])`                            |        注液         |                      -                      |
+|                           `create.emptying(output[], input[])`                            |        分液         |                      -                      |
+|                  `create.mechanicalCrafting(output[], pattern[], {key})`                  |      动力合成       |               详细见下方示例                |
+| `create.sequencedAssembly(output[], input, sequence[]).transitionalItem(item).loops(int)` |      序列装配       |               详细见下方示例                |
+
 ### 一些描述
 下面是所有的代码最外层形式，下面展示的只是局部代码
 ```js
-ServerEvents.recipes((event) =>{
+ServerEvents.recipes((event) => {
 	/* 
-	 * 这里是一个很基础的recipes事件的结构
+	 * 这里是一个很基础的recipes事件的解构
 	 * 不单单限制于Create这个Mod
-	 * 有其他Mod支持的时候直接在大括号内写便是
-	 * 如果不知道哪些Mod支持请使用ProbeJS
+	 * 有其他Mod支持的时候直接在大括号内写便是,例如:
+	 * const { create, thermal, kubejs, minecraft } = event.recipes
+	 * 如果不知道哪些Mod支持请尝试使用ProbeJS
 	*/
     const { create } = event.recipes
-    xxxxxxxxxxxxxx  
 })
 ```
 这里的xxxxx就是我们下面单独的代码了
 
-如果标注支持加热那么也支持超级加热
+如果标注支持**加热**那么也支持**超级加热**
 
 只需要在机器后面添加`.heated()`或者`superheated()`,前者是普通加热后者是超级加热
 
 如果标注了流体输出,则说明可以添加流体,像下面这样
 ```js
-Fluid.of("流体id")
+Fluid.of("流体id", 数量)
+Fluid.of('minecraft:lava', 810)
 ```
 
 如果标注可以概率输出，则是下面这种写法
 ```js
-Item.of("物品id").withChance(0.5)
+Item.of("物品id", 数量).withChance(0.5)
 ```
 在上面代码中则代表该物品有百分之五十的概率输出,所以在这个地方1是100%
 
 如果标注可以输出多个物品则是可以像下面这种写法
 ```js
-[Item.of("物品id"),Item.of("物品id")]
+[Item.of("物品id", 数量),Item.of("物品id", 数量)]
 ```
 这里可以注意的一点，如果标注了可以输出多个物品和概率，那么也可以在`of()`加上`.withChance()`
 
@@ -55,36 +77,38 @@ Item.of("物品id").withChance(0.5)
 create.compacting("minecraft:golden_apple", [
 	"minecraft:apple"
 ])
+
 //压块-加热
 create.compacting('minecraft:iron_nugget', [
 	'minecraft:iron_ore'
 ]).heated()
+
 // 压块-超级加热
 create.compacting('minecraft:diamond', [
 	'minecraft:deepslate_diamond_ore'
 ]).superheated()
+
 // 压块-流体
 create.compacting(Fluid.of('minecraft:water', 1000), [
 	Fluid.of('minecraft:lava', 1000)
 ])
-// 压块-概率输出
+
+// 压块-概率输出(1%的概率出钻石)
 create.compacting([
 	"minecraft:stone", 
-	Item.of("diamond").withChance(0.01)
-], [
-	'minecraft:magma_block'
-])
+	Item.of("minecraft:diamond").withChance(0.01)
+], 'minecraft:magma_block')
+
 // 压片
-create.pressing("minecraft:enchanted_golden_apple",[
+create.pressing("minecraft:enchanted_golden_apple", [
 	"minecraft:golden_apple"
 ])
+
 // 压片 - 概率输出
 create.pressing([
 	'minecraft:stone',
 	Item.of("diamond").withChance(0.5)
-], [
-	'minecraft:crying_obsidian'
-])
+], 'minecraft:crying_obsidian')
 ```
 简单解释一下再上面的代码
 
@@ -96,18 +120,35 @@ create.pressing([
 ### 动力搅拌机
 ```js
 // 混合搅拌 - 多个输入
-create.mixing("minecraft:grass_block",[Fluid.of('minecrft:water', 500),"minecraft:dirt"])
+create.mixing("minecraft:grass_block", [
+	Fluid.of('minecrft:water', 500),
+	"minecraft:dirt"
+])
+
 // 混合搅拌 - 加热
-create.mixing('minecraft:cooked_cod','minecraft:cod').heated()
+create.mixing('minecraft:cooked_cod', [
+	'minecraft:cod'
+]).heated()
+
 // 混合搅拌 - 超级加热
-create.mixing('minecraft:golden_carrot','minecraft:carrot').superheated()
+create.mixing('minecraft:golden_carrot', [
+	'minecraft:carrot'
+]).superheated()
+
 // 混合搅拌 - 流体输出和概率输出
-create.mixing([Fluid.lava(100),Item.of("diamond").withChance(0.3)],Item.of('minecraft:fire_charge',64)).superheated()
+create.mixing([
+	Fluid.of('minecraft:lava', 100),
+	Item.of("diamond").withChance(0.3)
+], Item.of('minecraft:fire_charge', 64)).superheated()
 ```
+
 ### 鼓风机
 ```js
 //鼓风机 - 洗涤(支持多个输出结果和概率输出)
-create.splashing('minecraft:golden_apple','minecraft:enchanted_golden_apple')
+create.splashing('minecraft:golden_apple', [
+	'minecraft:enchanted_golden_apple'
+])
+
 //鼓风机 灵魂火烧制(支持多个输出结果和概率输出)
 create.haunting(Item.of("minecraft:diamond").withChance(0.1),"minecraft:stone")
 ```
@@ -115,17 +156,25 @@ create.haunting(Item.of("minecraft:diamond").withChance(0.1),"minecraft:stone")
 ### 石磨
 ```js
 //石磨 - 研磨(支持多个输出结果和概率输出)
-create.milling(Item.of('minecraft:oak_planks',6),'minecraft:chest')
+create.milling(Item.of('minecraft:oak_planks', 6), [
+	'minecraft:chest'
+])
+
 ```
 ### 粉碎轮
 ```js
 //粉碎轮 - 粉碎(支持多个输出结果和概率) - 添加处理时间
-create.crushing('minecraft:netherite_scrap','minecraft:ancient_debris').processingTime(20 * 200)
+create.crushing('minecraft:netherite_scrap', [
+	'minecraft:ancient_debris'
+]).processingTime(20 * 200)
 ```
 ### 注液器
 ```js
 //注液 
-create.filling('minecraft:soul_torch',['minecraft:torch',Fluid.of('minecraft:milk',500)])
+create.filling('minecraft:soul_torch', [
+	'minecraft:torch',
+	Fluid.of('minecraft:milk', 500)
+])
 ```
 第一个参数为<font color=yellow>输出物品</font>
 
@@ -135,7 +184,10 @@ create.filling('minecraft:soul_torch',['minecraft:torch',Fluid.of('minecraft:mil
 ### 分液池
 ```js
 //分液
-create.emptying([Fluid.lava(50),'minecraft:slime_ball'],'minecraft:magma_cream')
+create.emptying([
+	Fluid.of('minecraft:lava', 50),
+	'minecraft:slime_ball'
+], 'minecraft:magma_cream')
 ```
 第一个参数为<font color=yellow>输出物品和流体</font>
 
@@ -145,14 +197,22 @@ create.emptying([Fluid.lava(50),'minecraft:slime_ball'],'minecraft:magma_cream')
 ### 动力锯
 ```js
 //动力锯 - 切割(支持多个输出结果和概率也可以添加处理时间[processingTime])
-create.cutting('minecraft:glowstone','minecraft:shroomlight')
+create.cutting('minecraft:glowstone', [
+	'minecraft:shroomlight'
+])
 ```
 ### 机械手
 ```js
 //机械手 - 安装(支持多个输出结果和概率)
-create.deploying('minecraft:chipped_anvil',['minecraft:damaged_anvil','minecraft:iron_ingot'])
+create.deploying('minecraft:chipped_anvil', [
+	'minecraft:damaged_anvil',
+	'minecraft:iron_ingot'
+])
 //机械手 - 安装 - 不消耗手持物品
-create.deploying('minecraft:anvil',['minecraft:chipped_anvil','minecraft:iron_ingot']).keepHeldItem()
+create.deploying('minecraft:anvil', [
+	'minecraft:chipped_anvil',
+	'minecraft:iron_ingot'
+]).keepHeldItem()
 ```
 第一个参数为<font color=yellow>输出物品</font>
 
@@ -162,25 +222,24 @@ create.deploying('minecraft:anvil',['minecraft:chipped_anvil','minecraft:iron_in
 ### 砂纸
 ```js
 //砂纸打磨 (支持概率输出)
-create.sandpaper_polishing('minecraft:glow_item_frame','minecraft:item_frame')
+create.sandpaper_polishing('minecraft:glow_item_frame', [
+	'minecraft:item_frame'
+])
 ```
 ### 动力合成器
 ```js
 //动力合成 最大9*9
-create.mechanical_crafting('minecraft:cow_spawn_egg',
-    [
-        "BBBBB",
-        "B B B",
-        "BBEBB",
-        "BMMMB",
-        "MMMMM"
-    ],
-    {
-        B:"minecraft:beef",
-        E:"minecraft:egg",
-        M:"minecraft:milk_bucket"
-    }
-)
+create.mechanical_crafting('minecraft:cow_spawn_egg', [
+    "BBBBB",
+    "B B B",
+    "BBEBB",
+    "BMMMB",
+    "MMMMM"
+], {
+    B: "minecraft:beef",
+    E: "minecraft:egg",
+    M: "minecraft:milk_bucket"
+})
 ```
 这个地方他只能类似于json的写法，最大支持9*9的配方
 
@@ -217,11 +276,10 @@ const incomplete = 'create:incomplete_precision_mechanism'
             //参与机器--切石机
             create.cutting(incomplete, incomplete),
             //参与机器--注液器
-            create.filling(incomplete,[incomplete,Fluid.lava(100)]),
+            create.filling(incomplete, [incomplete,Fluid.of('minecraft:lava', 100)]),
             //参与机器--压片
             create.pressing(incomplete,incomplete)
-        ]
-    )
+        ])
     //中间件--加工成的半成品物品
     .transitionalItem(incomplete)
     //循环次数--如果不写默认为5次
@@ -234,8 +292,8 @@ const incomplete = 'create:incomplete_precision_mechanism'
 ### 序列组装添加物品为半成品
 在序列组装是可以自定义半成品的，这里需要写在游戏加载(startup_scripts)时的文件夹内
 ```js
-StartupEvents.registry("item", event=>{
-    event.create("meng:diamond","create:sequenced_assembly")
+StartupEvents.registry("item", (event) => {
+    event.create("meng:diamond", "create:sequenced_assembly")
 })
 ```
 在`event.create`里的第一个参数为:**物品id**第二个参数为**物品类型**
@@ -246,9 +304,9 @@ StartupEvents.registry("item", event=>{
 像下面这样
 
 ```js
-let MysteriousItemConversionCategory = Java.loadClass('com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory')
-let ConversionRecipe = Java.loadClass('com.simibubi.create.compat.jei.ConversionRecipe')
+const MysteriousItemConversionCategory = Java.loadClass('com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory')
+const ConversionRecipe = Java.loadClass('com.simibubi.create.compat.jei.ConversionRecipe')
 
 MysteriousItemConversionCategory.RECIPES.add(ConversionRecipe.create('apple', "minecraft:diamond"))
 ```
-这样写的就是代表苹果通过神秘配方转换为钻石，但是这个神秘配方是什么，怎么做，得魔改作者们自己完成，他只是提供一个JEI提醒的，并不具备任何功能
+这样写的就是代表苹果通过神秘配方转换为钻石，但是这个神秘配方是什么，怎么做，得魔改作者们自己完成，他提供的只是一个JEI提醒，并不具备任何功能

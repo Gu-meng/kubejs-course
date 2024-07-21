@@ -1,7 +1,7 @@
 # 工作台物品附魔
 
 ```js
-ServerEvents.recipes( event => {
+ServerEvents.recipes((event) => {
     // 使铁剑可以在工作台上附魔
     enchantCrafting('iron_sword', event)
 })
@@ -10,7 +10,7 @@ ServerEvents.recipes( event => {
  * @param {$ItemStack_} enchanted_item - 被附魔物品的ItemStack
  * @param {$RecipesEventJS_} event - 配方事件
  */  
-const enchantCrafting = (enchanted_item, event) => {  
+const enchantCrafting = (enchanted_item, event) => { 
     event.shapeless(enchanted_item, [enchanted_item, 'minecraft:enchanted_book'])  
         .modifyResult((/**@type {$ModifyRecipeCraftingGrid_}*/grid, /**@type {$ItemStack_} */item) => {
             item = grid.find(enchanted_item)    

@@ -11,13 +11,13 @@
 
 ## 在注册物品时有什么用
 ```js
-StartupEvents.registry("item",event=>{
+StartupEvents.registry("item", (event) => {
     event.create("meng:my_item","basic")
 })
 ```
 上面是一个最简单的物品注册，第一个参数传入的就是我们的物品id
 
-物品id可以看到他被 `:` 进行分开了， `:` 前面是命名空间，用于游戏去寻找资源位置的，而后面才是物品id
+物品id可以看到他被 `:` 进行分开了,`:` 前面是命名空间，用于游戏去寻找资源位置的，而后面才是物品id
 
 命名空间决定了材质的存放位置,物品id决定了材质的命名
 
@@ -32,3 +32,7 @@ StartupEvents.registry("item",event=>{
 如果游戏内报错信息为`Non [a-z0-9/._-] xxxxx `说明你的id或者命名空间里有着不包含上面的规则
 
 这里有一个特殊的的符号`/`，他无法在命名空间里进行使用，但是可以使用在id的位置，这个时候我们一般叫他为资源路径,用于划分目录
+
+# ModID查看
+`Fabric` 的 `Modid` 在 `ModFile.jar/fabric.mod.json`
+`Forge` 或 `NeoForge` 的 `Modid` 在 `ModFile.jar/META-INF/mods.toml`

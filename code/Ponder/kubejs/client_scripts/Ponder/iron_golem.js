@@ -1,8 +1,8 @@
-Ponder.tags(event => {
+Ponder.tags((event) => {
 	event.createTag("kubejs:iron_golem", "minecraft:iron_block", "铁傀儡", "铁傀儡是高大强壮的友好生物，用于保护玩家和村民。");
 });
 
-Ponder.registry(event => {
+Ponder.registry((event) => {
 	function GetPos(_pos) {
 		if (typeof _pos === "string") { _pos = parseInt(_pos); };
 		return [parseInt(_pos / 100), parseInt(_pos / 10) % 10, _pos % 10];

@@ -1,5 +1,5 @@
-Ponder.registry(e => {
-	e.create('kubejs:submarine_core')
+Ponder.registry((event) => {
+	event.create('kubejs:submarine_core')
 		.scene('kubejs:submarine', '潜水艇', 'kubejs:submarine', (scene, utils) => {
 			// 显示底盘
 			scene.showBasePlate()

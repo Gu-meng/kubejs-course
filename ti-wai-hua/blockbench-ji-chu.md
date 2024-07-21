@@ -2,14 +2,14 @@
 ## 一、关于Blockbench
 
 * Blockbench可以说是Minecraft界的建模神器了,你们所见到的奇奇怪怪的方块基本都是Blockbench做的(但也有少数`obj`格式的模型),例如这个锻造台\
-  ![smithing\_table.png](/imgs/Blockbench/smithing_table.png)
-* **官网**:https://www.blockbench.net
+  ![smithing\_table_1.png](/imgs/Blockbench/smithing_table_1.png)![smithing\_table_2.png](/imgs/Blockbench/smithing_table_2.png)
+* **官网**: https://www.blockbench.net
 * **文件路径**
   * 模型文件往往存放于`assets/${modid}/models`
   * 和`textures`文件夹一样,`models`文件夹内一般分为`block`和`item`两个文件夹
   * 取决于你做的模型类型如果是方块就放入`block`内,如果是物品就放入`item`内
   * **保存时一定得是`json`格式的模型文件**
-  * 而贴图则是置于`assets/${modid}/textures`内,和上面一样,方块放`block`,物品放`item`,可以的话最好和模型一个`${modid}`
+  * 而贴图则是置于`assets/${modid}/textures`内,和上面一样,方块放`block`,物品放`item`,可以的话最好和模型存放于一个`${modid}`下
 
 ## 二、使用
 
