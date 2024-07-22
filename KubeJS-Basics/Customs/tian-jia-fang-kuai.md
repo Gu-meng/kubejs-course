@@ -53,6 +53,31 @@ StartupEvents.registry("block", event => {
 |               resistance(float)                |  ->   |          设置方块的耐爆炸性(默认为3)           |   this   |
 |                 requiresTool()                 |   -   |       设置方块需要对应的工具挖掘才会掉落       |   this   |
 
+#### 常用的tagBlock()参数
+* 挖掘需要的对应工具
+
+> 如果方块没有requiresTool()，则使用对应工具可以加快挖掘速度
+> 
+> 如果方块有requiresTool()，则需使用对应工具才可掉落
+
+| 参数 | 对应工具类型 |
+|:----:|:------:|
+| 'minecraft:mineable/sword' | 剑 |
+| 'minecraft:mineable/pickaxe' | 镐 |
+| 'minecraft:mineable/axe' | 斧 |
+| 'minecraft:mineable/shovel' | 锹 |
+| 'minecraft:mineable/hoe' | 锄 |
+
+* 挖掘需要的工具品质
+
+| 参数 | 需要的工具品质 |
+|:----:|:------:|
+| 'minecraft:needs_wooden_tool' | 木 |
+| 'minecraft:needs_stone_tool' | 石 |
+| 'minecraft:needs_iron_tool' | 铁 |
+| 'minecraft:needs_golden_tool' | 金 |
+| 'minecraft:needs_diamond_tool' | 钻石 |
+| 'forge:needs_netherite_tool' | 下界合金（由forge提供的标签，fabric版本未知） |
 
 ### 关于渲染相关
 |                        方法                         |                      参数                      |                描述                | 返回类型 |
