@@ -1,9 +1,8 @@
 # 模型
 ## 一、关于Blockbench
 
-* Blockbench可以说是Minecraft界的建模神器了,你们所见到的奇奇怪怪的方块基本都是Blockbench做的(但也有少数`obj`格式的模型),例如这个锻造台\
+* [**Blockbench**](https://www.blockbench.net)可以说是Minecraft界的建模神器了,你们所见到的奇奇怪怪的方块基本都是Blockbench做的(但也有少数[`obj`](/ti-wai-hua/ForgeReadObjModel.md)格式的进阶模型),例如这个锻造台\
   ![smithing\_table_1.png](/imgs/Blockbench/smithing_table_1.png)![smithing\_table_2.png](/imgs/Blockbench/smithing_table_2.png)
-* **官网**: https://www.blockbench.net
 * **文件路径**
   * 模型文件往往存放于`assets/${modid}/models`
   * 和`textures`文件夹一样,`models`文件夹内一般分为`block`和`item`两个文件夹
@@ -60,7 +59,7 @@ StartupEvents.registry("block", (event) => {
   * 如果你的贴图成功加载出来了那恭喜你成功了
   * 现在!去楼下小卖部给自己买一根5块钱以上的雪糕好好犒劳一下自己
   * ![model\_2.png](/imgs/Blockbench/model_2.png)
-* **物品栏模型**
+**物品栏模型**
   * 不难看到我们物品栏中的和手上的模型看起来非常奇怪,这个也很简单,我们点开工作区右上角的显示调整,然后点击左上角的3条横,选择`默认方块/三个点/应用于所有槽位`,保存!(当然你也可以选择自己调整)\
     ![display\_1.png](/imgs/Blockbench/display_1.png) ![display\_2.png](/imgs/Blockbench/display_2.png)
   * 和刚才一样的步骤,`F3+T`重载一下 ![model\_3.png](/imgs/Blockbench/game/model_3.png)

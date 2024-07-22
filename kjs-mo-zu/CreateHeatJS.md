@@ -1,7 +1,7 @@
 # CreateHeatJS(CreateJS的附属Mod)
 ### CreateHeatJS可以允许你通过使用CreateJS自定义部分加工配方所需的热源
 
-**例子**
+**例子**\
 ![例子](/imgs/createheadjs/Example_1.png)![例子](/imgs/createheadjs/Example_2.png)
 
 在配方后使用`.heatLevel()`方法来自定义热源等级

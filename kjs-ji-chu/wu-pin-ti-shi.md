@@ -4,7 +4,7 @@
 首先这个属于渲染事件所以需要写在`client_scripts`文件夹内
 
 ```js
-ItemEvents.tooltip(event =>{
+ItemEvents.tooltip((event	) =>{
     //添加一个最普通的文本，这个文本是在最下面进行显示的
     event.add('diamond',"添加一个普通文本")
     //用数组添加文本，在游戏内数组的每个文本都独占一行
@@ -19,7 +19,7 @@ ItemEvents.tooltip(event =>{
 
 上面只是最简单的操作实现，当你需要一些特殊按键时才能看到的文本就需要用到下面方法
 ```js
-ItemEvents.tooltip(event =>{
+ItemEvents.tooltip((event) =>{
     event.addAdvanced("diamond",(item,advanced,text) =>{
         //我们也可以直接删掉位置的文本，直接替代它！
         //这里删除第0位是物品名的位置，所以删掉之后没有名字了
@@ -68,7 +68,7 @@ ItemEvents.tooltip(event =>{
 
 代码是下面这样写的
 ```js
-ItemEvents.tooltip(event =>{
+ItemEvents.tooltip((event) =>{
     event.add("diamond",Text.translate("meng.lang.wenben.test"))
 })
 ```

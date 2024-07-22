@@ -2,46 +2,43 @@
 ## 合成附带nbt modifyResult
 下面代码是使用工作台里使用钻石剑+附魔书进行合成出带附魔效果的,如果有更高等级的附魔将直接覆盖低等级附魔
 ```js
-ServerEvents.recipes(event => {
-    event.shapeless(
-        Item.of('minecraft:diamond_sword'),
-        [
-            Item.of('minecraft:enchanted_book'),
-            Item.of('minecraft:diamond_sword')
-        ]
-    ).modifyResult((/**@type {$ModifyRecipeCraftingGrid_}*/grid,/**@type {$ItemStack_} */item) => {
-        let itemBook = grid.find("minecraft:enchanted_book")
-        let diamond_sword = grid.find("minecraft:diamond_sword")
-        let dsEns = diamond_sword.getEnchantments()
-        if (dsEns.size() == 0){
-            return diamond_sword.enchant(itemBook.getEnchantments())
-        }
-        let ibEns = itemBook.getEnchantments()
-        let i = 0;
-        ibEns.forEach((ikey,ivalue) =>{
-            dsEns.forEach((key,value)=>{
-                if(key == ikey){
-                    if (value < ivalue){
-                        /**@type {$ListTag_} */
-                        let dimEns = diamond_sword.getNbt().get("Enchantments")
-                        dimEns.forEach(value =>{
-                            if (value["id"] == key){
-                                value["lvl"] = ivalue
-                            }
-                        })
-                    }
-                }else{
-                    i++
-                }
-                if (i == dsEns.size()){
-                    i = 0
-                    diamond_sword = diamond_sword.enchant(ikey,ivalue)
-                }
-            })
-            
-        })
-        return diamond_sword
-    })
+ServerEvents.recipes((event) => {
+	event.shapeless(Item.of('minecraft:diamond_sword'), [
+		Item.of('minecraft:enchanted_book'),
+		Item.of('minecraft:diamond_sword')
+	]).modifyResult((/**@type {$ModifyRecipeCraftingGrid_}*/grid,/**@type {$ItemStack_} */item) => {
+		let itemBook = grid.find("minecraft:enchanted_book")
+		let diamond_sword = grid.find("minecraft:diamond_sword")
+		let dsEns = diamond_sword.getEnchantments()
+		if (dsEns.size() == 0) {
+			return diamond_sword.enchant(itemBook.getEnchantments())
+		}
+		let ibEns = itemBook.getEnchantments()
+		let i = 0;
+		ibEns.forEach((ikey, ivalue) => {
+			dsEns.forEach((key, value) => {
+				if (key == ikey) {
+					if (value < ivalue) {
+						/**@type {$ListTag_} */
+						let dimEns = diamond_sword.getNbt().get("Enchantments")
+						dimEns.forEach(value => {
+							if (value["id"] == key) {
+								value["lvl"] = ivalue
+							}
+						})
+					}
+				} else {
+					i++
+				}
+				if (i == dsEns.size()) {
+					i = 0
+					diamond_sword = diamond_sword.enchant(ikey, ivalue)
+				}
+			})
+
+		})
+		return diamond_sword
+	})
 })
 ```
 `modifyResult`里的第一个参数**grid**为合成台里的物品,第二个参数**item**为输出物品，最后需要返回一个物品为输出物品(return ·ItemStack·)
@@ -55,11 +52,10 @@ ServerEvents.recipes(event => {
 ## 消耗物品耐久合成 damageIngredient
 下面是使用所有斧子在工作台内和木头进行合成出8个模板的示例
 ```js
-ServerEvents.recipes(event => {
-    event.shapeless(
-        Item.of('minecraft:oak_planks',8),
-        ['minecraft:oak_log',"#minecraft:axes"]
-    ).damageIngredient({tag:"#minecraft:axes"},5)
+ServerEvents.recipes((event) => {
+	event.shapeless(Item.of('minecraft:oak_planks', 8), [
+		'minecraft:oak_log', "#minecraft:axes"
+	]).damageIngredient({ tag: "#minecraft:axes" }, 5)
 })
 ```
 `damageIngredient`里的第一个参数是匹配器，第二个参数为消耗耐久的个数

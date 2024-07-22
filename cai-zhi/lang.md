@@ -4,7 +4,7 @@
 * ### 文件路径
   `lang`文件主要存储于`assets/${modid}/lang`,不同的国家也有着不同的文件名称,具体请查看[**Wiki**](https://zh.minecraft.wiki/w/语言)或者文档[内部链接](/ti-wai-hua/lang-wen-jian-ming.md),而各文件都以`json`作为后缀,例如`en_us.json` `zh_cn.json` `zh_tw.json`等 
 
-  `minecraft:sand` minecraft是modid
+  `minecraft:sand` `minecraft`是`modid`
 
 * ### 写法
   * `lang`主要由本地化键名和文本组成,例如
