@@ -50,8 +50,8 @@
 	  ```
 
 	  注意`obj`里面的`usemtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2`要与`mtl`文件里面的`newmtl m_c5b90dae-3a75-90c1-2280-8a6b9dc0fba2`对应上
-	  `obj`的`mtllib qqqqoo.mtl`是确定mtl文件的,这里默认同级就行
-	  `mtl`里面的`map_Kd`则是要指定贴图的路径
+	  `obj`的`mtllib qqqqoo.mtl`是确定mtl文件的,这里默认同级就行\
+	  `mtl`里面的`map_Kd`则是要指定贴图的路径\
 	  贴图和原版模型一样,放在`assets/${modid}/textures/block`下(因为这次的教程属于方  块,所以放在`block`下,制作物品时记得`item`下)
   * ### 指向`Obj`文件
     * 因为`Minecraft`原版并不能直接读取`obj`模型文件,因此需要一个`json`模型来指向`obj`文件
@@ -65,9 +65,9 @@
 	      }
       }
 	  ```
-      `loader`表示要加载的类型,这里指定obj模型
-	  `model`表示要加载的Obj模型路径
-	  `flip_v`表示是否翻转贴图,因为`obj`模型贴图相对于MC来说是倒着的，所以要`true`
+      `loader`表示要加载的类型,这里指定obj模型\
+	  `model`表示要加载的Obj模型路径\
+	  `flip_v`表示是否翻转贴图,因为`obj`模型贴图相对于MC来说是倒着的，所以要`true`\
 	  `textures`表示要加载的贴图，这里指定`particle`贴图来确定粒子
 
   * ### 确定`blockstate`
@@ -102,10 +102,10 @@
       }
 	  ```
 	* ### 检查路径
-      `mtl`和`obj`指向`obj`模型的`json`文件放在`assets/${modid}/models/block`下
-	  `png`则放在`assets/${modid}/textures/block`下
-	  确定blockstate的json文件需要放在`assets/${modid}/blockstate`下
-	  同时要该文件命名都为方块注册名
+      `mtl`和`obj`指向`obj`模型的`json`文件放在`assets/${modid}/models/block`下\
+	  `png`则放在`assets/${modid}/textures/block`下\
+	  确定blockstate的json文件需要放在`assets/${modid}/blockstate`下\
+	  同时要该文件命名都为方块注册名\
 	  注意导出模型在游戏里面有所偏移，在制作模型时修改即可
 
 	# 参考自
