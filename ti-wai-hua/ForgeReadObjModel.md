@@ -109,5 +109,5 @@
 	  注意导出模型在游戏里面有所偏移，在制作模型时修改即可
 
 	# 参考自
-	[[我的世界 1.20.4 NeoForge 最新模组教程]18 加载OBJ模型](https://www.bilibili.com/video/BV1jm421J7UR)
+	[[我的世界 1.20.4 NeoForge 最新模组教程]18 加载OBJ模型](https://www.bilibili.com/video/BV1jm421J7UR)\
 	[[Boson 1.16 Modding Tutorial] - Obj](https://boson.v2mcdev.com/specialmodel/obj.html)
