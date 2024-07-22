@@ -34,15 +34,15 @@ StartupEvents.registry("block", event => {
 ### 常用
 |                      方法                      | 参数  |                      描述                      | 返回类型 |
 | :--------------------------------------------: | :---: | :--------------------------------------------: | :------: |
-|   randomTick(Consumer<RandomTickCallbackJS>)   |   -   |                  方块随机tick                  |   this   |
-|        lootTable(Consumer<LootBuilder>)        |   -   |                 方块战利品构建                 |    ~     |
+|   randomTick(Consumer\<RandomTickCallbackJS>)   |   -   |                  方块随机tick                  |   this   |
+|        lootTable(Consumer\<LootBuilder>)        |   -   |                 方块战利品构建                 |    ~     |
 |           tagBlock(ResourceLocation)           |  ->   | 设置方块的标签(如可被挖掘的工具类型和挖掘等级) |   this   |
 |           tagItem(ResourceLocation)            |  ->   |               设置方块物品的tag                |   this   |
 |                    noItem()                    |   -   |                不生成对应的物品                |   this   |
 |             displayName(Component)             |  ->   |                  设置显示名字                  |   this   |
 |               lightLevel(float)                |  ->   |                  设置光照等级                  |   this   |
-|     blockEntity(Consumer<BlockEntityInfo>)     |   -   |                 创建为方块实体                 |   this   |
-| rightClick(Consumer<BlockRightClickedEventJS>) |   -   |                  方块右键事件                  |   this   |
+|     blockEntity(Consumer\<BlockEntityInfo>)     |   -   |                 创建为方块实体                 |   this   |
+| rightClick(Consumer\<BlockRightClickedEventJS>) |   -   |                  方块右键事件                  |   this   |
 |                   noDrops()                    |   -   |                该方块的无掉落物                |   this   |
 |                hardness(float)                 |  ->   |             设置方块硬度(默认1.5)              |   this   |
 |               speedFactor(float)               |  ->   |         设置方块速度(高于1会速度很快)          |   this   |
@@ -91,17 +91,17 @@ StartupEvents.registry("block", event => {
 ### 其他
 |                             方法                              | 参数  |                 描述                 |         返回类型         |
 | :-----------------------------------------------------------: | :---: | :----------------------------------: | :----------------------: |
-|       mirrorState(Consumer<BlockStateMirrorCallbackJS>)       |   ~   |                  ~                   |           this           |
-|       rotateState(Consumer<BlockStateRotateCallbackJS>)       |   ~   |                  ~                   |           this           |
+|       mirrorState(Consumer\<BlockStateMirrorCallbackJS>)       |   ~   |                  ~                   |           this           |
+|       rotateState(Consumer\<BlockStateRotateCallbackJS>)       |   ~   |                  ~                   |           this           |
 |                       bounciness(float)                       |   ~   |                  ~                   |           this           |
-|       canBeReplaced(Predicate<CanBeReplacedCallbackJS>)       |   ~   |                  ~                   |           this           |
-| placementState(Consumer<BlockStateModifyPlacementCallbackJS>) |   ~   |             放置方块事件             |           this           |
-|      steppedOn(Consumer<EntitySteppedOnBlockCallbackJS>)      |   ~   |             方块踩踏事件             |           this           |
-|  afterFallenOn(Consumer<AfterEntityFallenOnBlockCallbackJS>)  |   -   |                  ~                   |           this           |
-|       fallenOn(Consumer<EntityFallenOnBlockCallbackJS>)       |   -   |            方块下落时事件            |           this           |
+|       canBeReplaced(Predicate\<CanBeReplacedCallbackJS>)       |   ~   |                  ~                   |           this           |
+| placementState(Consumer\<BlockStateModifyPlacementCallbackJS>) |   ~   |             放置方块事件             |           this           |
+|      steppedOn(Consumer\<EntitySteppedOnBlockCallbackJS>)      |   ~   |             方块踩踏事件             |           this           |
+|  afterFallenOn(Consumer\<AfterEntityFallenOnBlockCallbackJS>)  |   -   |                  ~                   |           this           |
+|       fallenOn(Consumer\<EntityFallenOnBlockCallbackJS>)       |   -   |            方块下落时事件            |           this           |
 |                   tagBoth(ResourceLocation)                   |   ~   |                  ~                   |           this           |
-|      defaultState(Consumer<BlockStateModifyCallbackJS>)       |   -   |            方块的默认状态            |           this           |
-|          exploded(Consumer<BlockExplodedCallbackJS>)          |   ~   | 方块爆炸后的事件(此时方块已经被摧毁) |           this           |
+|      defaultState(Consumer\<BlockStateModifyCallbackJS>)       |   -   |            方块的默认状态            |           this           |
+|          exploded(Consumer\<BlockExplodedCallbackJS>)          |   ~   | 方块爆炸后的事件(此时方块已经被摧毁) |           this           |
 |                      canBeWaterlogged()                       |   -   |           方块是否被水淹没           |           bool           |
 |                 textureSide(Direction,string)                 |   ~   |                  ~                   |           this           |
 |                      mapColor(MapColor)                       |  ->   |        设置方块在地图上的颜色        |           this           |
@@ -112,7 +112,7 @@ StartupEvents.registry("block", event => {
 |                    transformObject(Block)                     |   ~   |                  ~                   |          Block           |
 |                    texture(string,string)                     |   ~   |                  ~                   |           this           |
 |                   property(BlockProperties)                   |  ->   |             设置方块属性             |           this           |
-|               item(Consumer<BlockItemBuilder>)                |   -   |            方块的物品构建            |           this           |
+|               item(Consumer\<BlockItemBuilder>)                |   -   |            方块的物品构建            |           this           |
 |                     tag(ResourceLocation)                     |   ~   |                  ~                   |           this           |
 |                 color(int,BlockTintFunction)                  |   ~   |                  ~                   |           this           |
 |                   color(BlockTintFunction)                    |   ~   |                  ~                   |           this           |
