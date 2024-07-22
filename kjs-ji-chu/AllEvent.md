@@ -8,10 +8,10 @@
 ## 启动时文件夹下startup_scripts
 |     主事件     |      子事件       |       用处       |             示例             |
 | :------------: | :---------------: | :--------------: | :--------------------------: |
-| StartupEvents  |       init        |        -         |              -               |
+| StartupEvents  |       init        |  游戏初始化事件  |              -               |
 | StartupEvents  |     registry      | 注册各种游戏内容 | [链接](./tian-jia/README.md) |
-| WorldgenEvents |        add        |        -         |              -               |
-| WorldgenEvents |      remove       |        -         |              -               |
+| WorldgenEvents |        add        | 世界生成添加事件 |              -               |
+| WorldgenEvents |      remove       | 世界生成删除事件 |              -               |
 |   ItemEvents   |   modification    |   修改物品属性   |              -               |
 |   ItemEvents   | toolTierRegistry  |        -         |              -               |
 |   ItemEvents   | armorTierRegistry |        -         |              -               |
@@ -23,12 +23,12 @@
 | :-----------: | :----------------------: | :-------------------: | :--------------------------------------------: |
 | ServerEvents  |     lowPriorityData      |           -           |                       -                        |
 | ServerEvents  |     highPriorityData     |           -           |                       -                        |
-| ServerEvents  |          loaded          |           -           |                       -                        |
+| ServerEvents  |          loaded          |    服务器重载事件     |                       -                        |
 | ServerEvents  |         unloaded         |           -           |                       -                        |
 | ServerEvents  |           tick           |     游戏tick事件      |                       -                        |
 | ServerEvents  |           tags           |           -           |                       -                        |
 | ServerEvents  |     commandRegistry      |     指令注册事件      |                       -                        |
-| ServerEvents  |         command          |           -           |                       -                        |
+| ServerEvents  |         command          |    服务器指令事件     |                       -                        |
 | ServerEvents  |      customCommand       |      自定义指令       |                       -                        |
 | ServerEvents  |         recipes          |       配方事件        |      [链接](./ji-chu-xie-fa-tian-jia.md)       |
 | ServerEvents  |       afterRecipes       | 配方事件后处理(有bug) |                       -                        |
@@ -54,7 +54,7 @@
 |  ItemEvents   |     entityInteracted     |           -           |                       -                        |
 |  ItemEvents   |         crafted          |           -           |                       -                        |
 |  ItemEvents   |         smelted          |           -           |                       -                        |
-|  ItemEvents   |        foodEaten         |           -           |                       -                        |
+|  ItemEvents   |        foodEaten         |   食物物品食用事件    |                       -                        |
 |  ItemEvents   |    firstRightClicked     |           -           |                       -                        |
 |  ItemEvents   |     firstLeftClicked     |           -           |                       -                        |
 |  BlockEvents  |       rightClicked       |     方块右键事件      |                       -                        |
@@ -76,27 +76,27 @@
 | PlayerEvents  |           chat           |     玩家聊天事件      |                       -                        |
 | PlayerEvents  |       decorateChat       |           -           |                       -                        |
 | PlayerEvents  |       advancement        |           -           |                       -                        |
-| PlayerEvents  |     inventoryOpened      |           -           |                       -                        |
-| PlayerEvents  |     inventoryClosed      |           -           |                       -                        |
-| PlayerEvents  |     inventoryChanged     |           -           |                       -                        |
-| PlayerEvents  |       chestOpened        |           -           |                       -                        |
-| PlayerEvents  |       chestClosed        |           -           |                       -                        |
+| PlayerEvents  |     inventoryOpened      |   玩家打开背包事件    |                       -                        |
+| PlayerEvents  |     inventoryClosed      |   玩家关闭背包事件    |                       -                        |
+| PlayerEvents  |     inventoryChanged     |   玩家背包变化事件    |                       -                        |
+| PlayerEvents  |       chestOpened        |   玩家打开箱子事件    |                       -                        |
+| PlayerEvents  |       chestClosed        |   玩家关闭箱子事件    |                       -                        |
 
 ## 客户端文件夹下client_scripts
-|    主事件     |       子事件       |   用处   |            示例            |
-| :-----------: | :----------------: | :------: | :------------------------: |
-| ClientEvents  | highPriorityAssets |    -     |             -              |
-| ClientEvents  |        init        |    -     |             -              |
-| ClientEvents  |      loggedIn      |    -     |             -              |
-| ClientEvents  |     loggedOut      |    -     |             -              |
-| ClientEvents  |        tick        |    -     |             -              |
-| ClientEvents  |   painterUpdated   |    -     |             -              |
-| ClientEvents  |   leftDebugInfo    |    -     |             -              |
-| ClientEvents  |   rightDebugInfo   |    -     |             -              |
-| ClientEvents  |    paintScreen     |    -     |             -              |
-| NetworkEvents |     fromServer     |    -     |             -              |
-|  ItemEvents   |      tooltip       | 物品提示 | [链接](./wu-pin-ti-shi.md) |
-|  ItemEvents   | clientRightClicked |    -     |             -              |
-|  ItemEvents   | clientLeftClicked  |    -     |             -              |
+|    主事件     |       子事件       |      用处      |            示例            |
+| :-----------: | :----------------: | :------------: | :------------------------: |
+| ClientEvents  | highPriorityAssets |       -        |             -              |
+| ClientEvents  |        init        |       -        |             -              |
+| ClientEvents  |      loggedIn      |       -        |             -              |
+| ClientEvents  |     loggedOut      |       -        |             -              |
+| ClientEvents  |        tick        | 客户端tick事件 |             -              |
+| ClientEvents  |   painterUpdated   |       -        |             -              |
+| ClientEvents  |   leftDebugInfo    |       -        |             -              |
+| ClientEvents  |   rightDebugInfo   |       -        |             -              |
+| ClientEvents  |    paintScreen     |       -        |             -              |
+| NetworkEvents |     fromServer     |       -        |             -              |
+|  ItemEvents   |      tooltip       |    物品提示    | [链接](./wu-pin-ti-shi.md) |
+|  ItemEvents   | clientRightClicked |       -        |             -              |
+|  ItemEvents   | clientLeftClicked  |       -        |             -              |
 
 # 模组提供的事件
