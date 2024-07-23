@@ -1,5 +1,12 @@
 # 祭坛合成
 本章涉及内容：自定义结构、配方检测、配方注册、JEI自定义注册、物品实体
+涉及模组及版本:
+1. jei-1.20.1-forge-15.3.0.4
+2. rhino-forge-2001.2.2-build.18
+3. architectury-9.2.14-forge
+4. kubejsadditions-forge-4.3.2
+5. kubejs-forge-2001.6.5-build.14
+6. probejs-7.0.1-forge
 ## 注册方块和结构检测
 **注：该代码应在`startup_scripts`里**
 ```js
@@ -401,3 +408,4 @@ JEIAddedEvents.registerRecipeCatalysts(jei =>{
 1. 该项目的配方检测全是字符串，并不是ItemStack所以无法检测nbt，如需请自行更改
 2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
 3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
+4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/code/projects/Meng/kubejs)
