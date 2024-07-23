@@ -247,5 +247,3 @@ StartupEvents.registry("enchantment",event =>{
 }
 ```
 使用`if (entity.isLiving())`判断被攻击的是否为一个活体生物,如果是则给使用者回复等同于附魔等级的血量
-
-# 最后编辑时间 2024年7月11日-05点05分

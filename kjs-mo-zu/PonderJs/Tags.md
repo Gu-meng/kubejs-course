@@ -34,7 +34,7 @@ Ponder.tags((event) => {
 });
 ```
 
-EX: 建立 Ponder 时一并设置其 PonderTag, 以 [iron_golem.js](/files/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) 的部分代码为例
+EX: 建立 Ponder 时一并设置其 PonderTag, 以 [iron_golem.js](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) 的部分代码为例
 
 ```js
 Ponder.registry(event => {

@@ -72,6 +72,9 @@ StartupEvents.registry("fluid", (event) =>{
 ```
 
 ### 简单的注册流体轮子
+
+**注：以下内容根据个人习惯选择性使用**
+
 ```js
 StartupEvents.registry("fluid", (event) => {
 	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
@@ -92,8 +95,8 @@ StartupEvents.registry("fluid", (event) => {
 		event.create(MODID + name) // 声明id
 			.thickTexture(color) // 流体颜色
 			.bucketColor(color) // 桶内流体颜色
-			.flowingTexture(MODID + PATH + "flowing") // 读取本地流体文件,可在(/files/meng/textures/block/fluid)下载
-			.stillTexture(MODID + PATH + "still") // 读取本地流体文件,可在(/files/meng/textures/block/fluid)下载
+			.flowingTexture(MODID + PATH + "flowing") // 读取本地流体文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载
+			.stillTexture(MODID + PATH + "still") // 读取本地流体文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载
 			.tag(MODID + "fluid") // 添加流体tag(可选)
 	})
 })

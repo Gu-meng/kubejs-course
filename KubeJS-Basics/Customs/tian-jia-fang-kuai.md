@@ -146,6 +146,9 @@ StartupEvents.registry("block", event => {
 
 
 ### 简单的注册方块轮子
+
+**注：以下内容根据个人习惯选择性使用**
+
 ```js
 StartupEvents.registry("block", (event) => {
 	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
@@ -184,11 +187,11 @@ StartupEvents.registry("block", (event) => {
 		event.create(MODID + name) // 声明方块id
 			.soundType(soundType) // 声音类型
 			.hardness(hardness) // 硬度
-			.resistance(hardness) // 声音类型
+			.resistance(hardness) // 方块的耐爆炸性
 			.tagBlock(toolType[tool]) // 工具类型
 			.tagBlock(miningLevel[level])  // 挖掘等级
-			.tagItem(MODID + "items") // 添加物品tag(可选)
-			.tagItem(MODID + "blocks") // 添加物品tag(可选)
+			// .tagItem(MODID + "items") // 添加物品tag(可选)
+			// .tagItem(MODID + "blocks") // 添加物品tag(可选)
 			.requiresTool(true) // 必须要工具挖掘
 	})
 })

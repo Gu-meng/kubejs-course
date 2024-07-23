@@ -3,7 +3,7 @@
 >
 > 在此文件内的任意地方都可以, 但是更建议在 `client_scripts` 内创建一个 `Ponder` 文件夹, 将你的 Ponder 脚本丢进去, 而 `Ponder` 文件夹内还可以套文件夹用于进一步的整理与分类, 养成分类的好习惯, 会让你的编写更加方便
 >
-> 小提一嘴 [KubeJS](/files/Ponder/kubejs/) 内的文件是完全按照路径放置的, 可以参考
+> 小提一嘴 [KubeJS](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Ponder/kubejs/) 内的文件是完全按照路径放置的, 可以参考
 >
 > ![文件夹展示](/imgs/PonderJS/wen-jian-jia.png)
 
