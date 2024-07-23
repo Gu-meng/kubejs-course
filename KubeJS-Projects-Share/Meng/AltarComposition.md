@@ -408,4 +408,4 @@ JEIAddedEvents.registerRecipeCatalysts(jei =>{
 1. 该项目的配方检测全是字符串，并不是ItemStack所以无法检测nbt，如需请自行更改
 2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
 3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/code/projects/Meng/kubejs)
+4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/code/projects/AltarComposition/)
