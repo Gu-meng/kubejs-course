@@ -14,8 +14,7 @@ Ponder场景并不是一个小世界/维度! 它只是一个支持一些属性�
 
 
 
-以下程序片段截自forge机械动力官方源码`Create/src/main/java/com/simibubi/create/infrastructure/ponder/scenes
-/ProcessingScenes.java`(思索 使用辊压机打包物品):
+以下程序片段截自forge机械动力官方源码`Create/src/main/java/com/simibubi/create/infrastructure/ponder/scenes/ProcessingScenes.java`(思索 使用辊压机打包物品):
 
 ```java
 BlockPos basin = util.grid.at(1, 2, 2);
@@ -122,7 +121,7 @@ onEvent("ponder.registry", (event) => {
 
     为了轻松的定位/选择场景内容一类,ponder除了scene对象还有个util对象：
 
-![utils截图](/imgs/PonderJs/utils.png)
+![utils截图](/imgs/PonderJS/utils.png)
 
 util.grid里的方法用来选择某一个位置
 

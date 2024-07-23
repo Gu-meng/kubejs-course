@@ -20,7 +20,7 @@
 
 # 开始
 
-以 [iron_golem.js](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) 的部分代码为例
+以 [iron_golem.js](/files/Ponder/kubejs/client_scripts/Ponder/iron_golem.js) 的部分代码为例
 
 # PonderTag 的部分
 

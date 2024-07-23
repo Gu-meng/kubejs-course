@@ -13,30 +13,54 @@ kjs创建物品是非常简单的，只需要一行就可以解决
 `create`里的第二个参数为物品类型，在下面会给大家列举出来他的物品类型和描述
 
 ### 物品类型
-|      类型参数      |   作用   |          描述         |                示例                 |
-| ----------------- | -------- | -------------------- | ----------------------------------- |
-|        basic      |  基础物品 |          无          |                    待更新            |
-|      music_disc   |    唱片   | 可以在唱片机里播放的  | [添加唱片](./item-type/chang-pian.md) |
-| smithing_template |  锻造模板 |          无          |                    待更新            |
-|       helmet      |    头盔   |          无          |                    待更新            |
-|     chestplate    |    胸甲   |          无          |                    待更新            |
-|      leggings     |    护腿   |          无          |                    待更新            |
-|        boots      |    鞋子   |          无          |                    待更新            |
-|         axe       |    斧子   |          无          |                    待更新            |
-|         hoe       |    锄头   |          无          |                    待更新            |
-|       pickaxe     |    镐子   |          无          |                    待更新            |
-|       shovel      |    铲子   |          无          |                    待更新            |
-|        sword      |     剑    |          无          |                    待更新            |
-|     shears_item   |    剪刀   |          无          |                    待更新            |
+|      类型参数       |   作用   |         描述         |                 示例                  |
+| :-----------------: | :------: | :------------------: | :-----------------------------------: |
+|       `basic`       | 基础物品 |          无          |                待更新                 |
+|    `music_disc`     |   唱片   | 可以在唱片机里播放的 | [添加唱片](./item-type/chang-pian.md) |
+| `smithing_template` | 锻造模板 |          无          |                待更新                 |
+|      `helmet`       |   头盔   |          无          |                待更新                 |
+|    `chestplate`     |   胸甲   |          无          |                待更新                 |
+|     `leggings`      |   护腿   |          无          |                待更新                 |
+|       `boots`       |   鞋子   |          无          |                待更新                 |
+|        `axe`        |   斧子   |          无          |                待更新                 |
+|        `hoe`        |   锄头   |          无          |                待更新                 |
+|      `pickaxe`      |   镐子   |          无          |                待更新                 |
+|      `shovel`       |   铲子   |          无          |                待更新                 |
+|       `sword`       |    剑    |          无          |                待更新                 |
+|    `shears_item`    |   剪刀   |          无          |                待更新                 |
 
 ### 通用方法参数
-|        方法调用      |     传入参数     |                  用处                   |
-| ------------------- | --------------- | --------------------------------------- |
-|   displayName(str)  |  str -> 显示名称 |      在没有配置lang文件时直接显示的名称   |
-|    burnTime(num)    |  num -> 燃烧时间 |      设置燃烧时间，让物品可被当作燃料     |
-| fireResistant(bool) | bool -> 是否抗火 |             设置物品的防火效果           |
-|       tag(str)      |  str -> 添加tag  |        将物品添加进一个tag标签组里       |
-|    maxDamage(num)   |  num -> 最大耐久 |             设置物品的最大耐久           |
-|   maxStackSize(num) |  num -> 最大堆叠 |  设置物品的最大堆叠,虽然能超过64但是不建议 |
-|    barColor()
-|         待更新      |      待更新       |          待更新                  |
+|      方法调用       |     传入参数     |                   用处                    |
+| :-----------------: | :--------------: | :---------------------------------------: |
+|  displayName(str)   | str -> 显示名称  |    在没有配置lang文件时直接显示的名称     |
+|    burnTime(num)    | num -> 燃烧时间  |     设置燃烧时间，让物品可被当作燃料      |
+| fireResistant(bool) | bool -> 是否抗火 |            设置物品的防火效果             |
+|      tag(str)       |  str -> 添加tag  |        将物品添加进一个tag标签组里        |
+|   maxDamage(num)    | num -> 最大耐久  |            设置物品的最大耐久             |
+|  maxStackSize(num)  | num -> 最大堆叠  | 设置物品的最大堆叠,虽然能超过64但是不建议 |
+|     barColor()      |                  |                                           |
+|       待更新        |      待更新      |                  待更新                   |
+
+### 简单的注册物品轮子
+```js
+StartupEvents.registry("item", (event) => {
+	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
+	const MODID = "meng:"
+
+	/* 
+	* 定义物品
+	* 在添加下一个物品时要记得在[]后加上逗号
+	* 并且一定要严格按照格式进行
+	* [物品id, 稀有度类型, 是否发光]
+	*/
+	let itemRegisters = [
+		["example_item", "common", false],
+	]
+	itemRegisters.forEach(([name, rarity, glow]) => {
+		event.create(MODID + name) // 声明id
+			.rarity(rarity) // 稀有度
+			.glow(glow) // 是否发光
+			.tag(MODID + "items") // 添加物品tag(可选)
+	})
+})
+```

@@ -8,25 +8,25 @@ StartupEvents.registry("block", event => {
     event.create("meng:my_block", "basic")
 })
 ```
-上面的代码中我们选择的是方块注册，将方块id设置为`"meng:my_block"`，这里前面的`meng`是[命名空间](/ti-wai-hua/ming-ming-kong-jian.md),主要关系到我们之后去添加[材质贴图](/cai-zhi/tie-tu.md)和[本地化（lang文件）](/cai-zhi/lang.md)的路径
+上面的代码中我们选择的是方块注册，将方块id设置为`"meng:my_block"`，这里前面的`meng`是[命名空间](/ti-wai-hua/ming-ming-kong-jian.md),主要关系到我们之后去添加[材质贴图](/cai-zhi/tie-tu.md)和[本地化(lang文件)](/cai-zhi/lang.md)的路径
 
 ## 方块类型
 我们的方块类型设置的为`basic`也就是默认的、基本的方块类型，在kubejs中已经给我们提供了不少的方块类型，如下
-|      类型      |            描述            |  示例  |
-| :------------: | :------------------------: | :----: |
-|     basic      |          基础方块          | 待更新 |
-|     carpet     |            地毯            | 待更新 |
-|      crop      |           农作物           | 待更新 |
-|     fence      |            栅栏            | 待更新 |
-|   fence_gate   |           栅栏门           | 待更新 |
-| pressure_plate |           压力板           | 待更新 |
-|     button     |            按钮            | 待更新 |
-|      slab      |            台阶            | 待更新 |
-|     stairs     |            楼梯            | 待更新 |
-|      wall      |             墙             | 待更新 |
-|    cardinal    | 朝向方块(类似讲台、熔炉等) | 待更新 |
-|    detector    |         检测方块?          | 待更新 |
-|    falling     |      下落方块(类沙子)      | 待更新 |
+|       类型       |            描述            |  示例  |
+| :--------------: | :------------------------: | :----: |
+|     `basic`      |          基础方块          | 待更新 |
+|     `carpet`     |            地毯            | 待更新 |
+|      `crop`      |           农作物           | 待更新 |
+|     `fence`      |            栅栏            | 待更新 |
+|   `fence_gate`   |           栅栏门           | 待更新 |
+| `pressure_plate` |           压力板           | 待更新 |
+|     `button`     |            按钮            | 待更新 |
+|      `slab`      |            台阶            | 待更新 |
+|     `stairs`     |            楼梯            | 待更新 |
+|      `wall`      |             墙             | 待更新 |
+|    `cardinal`    | 朝向方块(类似讲台、熔炉等) | 待更新 |
+|    `detector`    |         检测方块?          | 待更新 |
+|    `falling`     |      下落方块(类沙子)      | 待更新 |
 
 在kubejs中，你并不用为方块单独去注册物品，kubejs已经帮你把方块物品注册好了，所以你可以直接获取到方块的物品，且物品id和方块id是一样的，在准备材质时，只需要准备方块的材质就可以了，无需单独为方块物品准备材质
 ## 通用方法参数
@@ -60,24 +60,24 @@ StartupEvents.registry("block", event => {
 > 
 > 如果方块有requiresTool()，则需使用对应工具才可掉落
 
-|             参数             | 对应工具类型 |
-| :--------------------------: | :----------: |
-|  'minecraft:mineable/sword'  |      剑      |
-| 'minecraft:mineable/pickaxe' |      镐      |
-|   'minecraft:mineable/axe'   |      斧      |
-| 'minecraft:mineable/shovel'  |      锹      |
-|   'minecraft:mineable/hoe'   |      锄      |
+|              参数              | 对应工具类型 |
+| :----------------------------: | :----------: |
+|  `"minecraft:mineable/sword"`  |      剑      |
+| `"minecraft:mineable/pickaxe"` |      镐      |
+|   `"minecraft:mineable/axe"`   |      斧      |
+| `"minecraft:mineable/shovel"`  |      锹      |
+|   `"minecraft:mineable/hoe"`   |      锄      |
 
 * 挖掘需要的工具品质
 
-|              参数              |                需要的工具品质                 |
-| :----------------------------: | :-------------------------------------------: |
-| 'minecraft:needs_wooden_tool'  |                      木                       |
-|  'minecraft:needs_stone_tool'  |                      石                       |
-|  'minecraft:needs_iron_tool'   |                      铁                       |
-| 'minecraft:needs_golden_tool'  |                      金                       |
-| 'minecraft:needs_diamond_tool' |                     钻石                      |
-|  'forge:needs_netherite_tool'  | 下界合金（由forge提供的标签，fabric版本未知） |
+|               参数               |                需要的工具品质                |
+| :------------------------------: | :------------------------------------------: |
+| `"minecraft:needs_wooden_tool"`  |                      木                      |
+|  `"minecraft:needs_stone_tool"`  |                      石                      |
+|  `"minecraft:needs_iron_tool"`   |                      铁                      |
+| `"minecraft:needs_golden_tool"`  |                      金                      |
+| `"minecraft:needs_diamond_tool"` |                     钻石                     |
+|  `"forge:needs_netherite_tool"`  | 下界合金(由`Forge`提供的标签,fabric版本未知) |
 
 ### 关于渲染相关
 |                        方法                         |                      参数                      |                描述                | 返回类型 |
@@ -94,11 +94,6 @@ StartupEvents.registry("block", event => {
 |                   fullBlock(bool)                   |                       ->                       |       设置方块是否为完整的块       |   this   |
 |                    opaque(bool)                     |                       ->                       | 设置方块是否透明(光线是否能够穿过) |   this   |
 |                  material(string)                   |                       ->                       |                 ?                  |   this   |
-
-
-
-
-
 
 ### 声音类型
 |         方法         | 参数  |    描述    | 返回类型 |
@@ -148,3 +143,53 @@ StartupEvents.registry("block", event => {
 |                         waterlogged()                          |   -   |                  ~                   |           this           |
 |                instrument(NoteBlockInstrument)                 |   ~   |                  ~                   |           this           |
 |                   createAdditionalObjects()                    |   -   |                  ~                   |            -             |
+
+
+### 简单的注册方块轮子
+```js
+StartupEvents.registry("block", (event) => {
+	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
+	const MODID = "meng:"
+
+	// 工具类型
+	const toolType = {
+		sword: "minecraft:mineable/sword",
+		pickaxe: "minecraft:mineable/pickaxe",
+		axe: "minecraft:mineable/axe",
+		shovel: "minecraft:mineable/shovel",
+		hoe: "minecraft:mineable/hoe"
+	}
+
+	// 挖掘等级
+	const miningLevel = {
+		wooden: "minecraft:needs_wooden_tool",
+		stone: "minecraft:needs_stone_tool",
+		iron: "minecraft:needs_iron_tool",
+		gold: "minecraft:needs_gold_tool",
+		diamond: "minecraft:needs_diamond_tool",
+		nether: "forge:needs_netherite_tool"
+	}
+
+	/* 
+	* 定义方块
+	* 在添加下一个方块时要记得在[]后加上逗号
+	* 并且一定要严格按照格式进行
+	* [方块id, 声音类型, 硬度和爆炸抗性(这里我选择让他们共用一个数值), 所需要的工具类型, 所需要的挖掘等级]
+	*/
+	let blockRegisters = [
+		// 示例
+		["example_block", "stone", 3, "pickaxe", "wooden"],
+	]
+	blockRegisters.forEach(([name, soundType, hardness, tool, level]) => {
+		event.create(MODID + name) // 声明方块id
+			.soundType(soundType) // 声音类型
+			.hardness(hardness) // 硬度
+			.resistance(hardness) // 声音类型
+			.tagBlock(toolType[tool]) // 工具类型
+			.tagBlock(miningLevel[level])  // 挖掘等级
+			.tagItem(MODID + "items") // 添加物品tag(可选)
+			.tagItem(MODID + "blocks") // 添加物品tag(可选)
+			.requiresTool(true) // 必须要工具挖掘
+	})
+})
+```

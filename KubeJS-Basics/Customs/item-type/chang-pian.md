@@ -3,7 +3,7 @@
 ## 添加声音
 在添加唱片之前，我们需要先添加声音，不然我们的唱片就是一个哑巴唱片，播放不了我们自己的音乐
 ```js
-StartupEvents.registry("sound_event", event => {
+StartupEvents.registry("sound_event", (event) => {
         event.create("meng:music.my_music")
 })
 ```
@@ -11,7 +11,7 @@ StartupEvents.registry("sound_event", event => {
 ## 注册物品
 接下来我们就可以来注册唱片了
 ```js
-StartupEvents.registry("item", event => {
+StartupEvents.registry("item", (event) => {
     event.create("meng:my_music_disc", "music_disc")
             .song("meng:music.my_music", 103)
             .tag("music_discs")
@@ -30,11 +30,11 @@ StartupEvents.registry("item", event => {
 ### 创建声音文件夹
 之后我们需要创建文件夹将音乐存入进来
 
-将ogg文件存入路径为`kubejs/assets/命名空间/sounds`里，这里命名空间就是上面冒号前的字符，我这边是meng，所以实际路径为`kubejs/assets/meng/sounds`,如果没有写命名空间，那么路径则为`kubejs/assets/kubejs/sounds`
+将ogg文件存入路径为`kubejs/assets/${modid}/sounds`里，这里`${modid}`就是上面冒号前的字符，我这边是`meng`，所以实际路径为`kubejs/assets/meng/sounds`,如果没有写`${modid}`，那么路径则为`kubejs/assets/kubejs/sounds`
 
 需要将文件重命名，这里最好是和音乐id的`music.`后面相同(当然这里可以自定义，但是不建议),所里这里我的文件名为`my_music.ogg`,完整路径为`kubejs/assets/meng/sounds/my_music.ogg`
 ### 编写寻找声音文件
-返回到路径为`kubejs/assets/命名空间`下，创建一个名为`sounds.json`的文件，打开进行编辑
+返回到路径为`kubejs/assets/${modid}`下，创建一个名为`sounds.json`的文件，打开进行编辑
 
 [详细编写可以查看mcwiki](https://zh.minecraft.wiki/w/Sounds.json?variant=zh-cn)
 ```json
@@ -44,7 +44,7 @@ StartupEvents.registry("item", event => {
         // 固定格式
         "sounds": [
             {
-                // 创建声音的文件夹 也就是我们上面的 kubejs/assets/命名空间/sounds
+                // 创建声音的文件夹 也就是我们上面的 kubejs/assets/${modid}/sounds
                 "name": "meng:my_music",
                 // 以声音流输出，建议填写true(唱片)
                 "stream": true
@@ -53,12 +53,12 @@ StartupEvents.registry("item", event => {
     },
 }
 ```
-[关于sounds.json的文件结构](../../../ti-wai-hua/sounds-json.md)
+[关于sounds.json的文件结构](/ti-wai-hua/sounds-json.md)
 
 ## 本地化和材质
 接下来就是最简单的对物品进行汉化，让物品显示中文文本
 
-进入路径`kubejs/assets/命名空间/lang` 创建文件`zh_ch.json` (如果有直接打开就行)
+进入路径`kubejs/assets/${modid}/lang` 创建文件`zh_ch.json` (如果有直接打开就行)
 
 编写或添加文本
 ```json
@@ -71,7 +71,7 @@ StartupEvents.registry("item", event => {
 
 第二个为唱片的音乐信息
 
-材质路径为`kubejs/assets/命名空间/textures/item` 将已经画好的唱片材质放在该路径下并命名为`my_music.png` 这里和物品id名称一样
+材质路径为`kubejs/assets/${modid}/textures/item` 将已经画好的唱片材质放在该路径下并命名为`my_music.png` 这里和物品id名称一样
 
 ## 注意事项和音乐下载
-如果你上面做的都没问题，唱片也能成功放进唱片机，代码也没报错，但是就是没声音，建议先用孤梦[提供的音乐](../../../files/my_music.ogg) 如果链接打不开或者无法下载，在[哔哩哔哩私信孤梦](https://space.bilibili.com/16632546)
+如果你上面做的都没问题，唱片也能成功放进唱片机，代码也没报错，但是就是没声音，建议先用孤梦[提供的音乐](/files/meng/sounds/my_music.ogg) 如果链接打不开或者无法下载，在[哔哩哔哩私信孤梦](https://space.bilibili.com/16632546)

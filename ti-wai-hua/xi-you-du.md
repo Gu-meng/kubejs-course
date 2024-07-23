@@ -1,11 +1,11 @@
 # 物品稀有度(Rarity)
 **稀有度主要作用是用来影响物品名称在游戏内显示的颜色效果(如果物品单独设置了颜色则不受影响)**
 ## 稀有度的等级
-在使用调用方法时候我们得注意自己使用的ProbeJS版本
+在使用调用方法时候我们得注意自己使用的`ProbeJS`版本
 
 如果是**7.0以上**请这样导包`const { $Rarity } = require("packages/net/minecraft/world/item/$Rarity")`
 
-如果是**7.0以下**请这样导包`const $Rarity  = Java.loadClass("net.minecraft.world.item.Rarity")`
+如果是**7.0以下**请这样导包`const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity")`
 |   等级   | 含义  | 对应颜色 |     调用方法     | 对应字符串 |
 | :------: | :---: | :------: | :--------------: | :--------: |
 |  Common  | 常见  |   白色   |  $Rarity.COMMON  |   common   |

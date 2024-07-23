@@ -12,10 +12,10 @@
 
 Ciallo ～(∠·ω< )⌒☆ 这里是**柒星月**~, 你也可以叫我**柒月**, 那么在开始之前呢, 我们先来看一段完整的`Ponder`演示, 以方便了解一下`Ponder`究竟可以做什么
 
-![完整gif](/imgs/PonderJs/wan-zheng.gif)
+![完整gif](/imgs/PonderJS/wan-zheng.gif)
 
-> 本处使用的范例文件为 [Submarine.js](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Ponder/kubejs/client_scripts/Ponder/Submarine.js)
+> 本处使用的范例文件为 [Submarine.js](/files/Ponder/kubejs/client_scripts/Ponder/Submarine.js)
 >
-> 其调用的 nbt 文件在 [submarine.nbt](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Ponder/kubejs/assets/kubejs/ponder/submarine.nbt)
+> 其调用的 nbt 文件在 [submarine.nbt](/files/Ponder/kubejs/assets/kubejs/ponder/submarine.nbt)
 
 可以看到 `Ponder` 除了 `Create` 自带的用法外, 我们还可以使用它制作出 `Modpack` 内某些 `多方块结构` 以及 `世界合成` 等涉及到多个方块的工作方式
