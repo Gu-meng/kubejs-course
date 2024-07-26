@@ -73,7 +73,7 @@ StartupEvents.registry("fluid", (event) =>{
 
 ### 简单的注册流体轮子
 
-**注：以下内容根据个人习惯选择性使用**
+**注:以下内容根据个人习惯选择性使用和更改**
 
 ```js
 StartupEvents.registry("fluid", (event) => {
@@ -84,19 +84,19 @@ StartupEvents.registry("fluid", (event) => {
 	
 	/* 
 	* 定义流体
-	* 在添加下一钟流体时要记得在[]后加上逗号
+	* 在添加下一种流体时要记得在[]后加上逗号
 	* 并且一定要严格按照格式进行
 	* [流体id, 颜色]
 	*/
-	let fluid = [
+	let fluidRegisters = [
 		["example_fluid", 0x808080],
 	]
-	fluid.forEach(([name, color]) => {
+	fluidRegisters.forEach(([name, color]) => {
 		event.create(MODID + name) // 声明id
 			.thickTexture(color) // 流体颜色
 			.bucketColor(color) // 桶内流体颜色
-			.flowingTexture(MODID + PATH + "flowing") // 读取本地流体文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载
-			.stillTexture(MODID + PATH + "still") // 读取本地流体文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载
+			.flowingTexture(MODID + PATH + "flowing") // 读取本地流体贴图文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载(.mcmeta文件也要一起下载!)
+			.stillTexture(MODID + PATH + "still") // 读取本地流体贴图文件,可在(/code/This/kubejs/assets/meng/textures/block/fluid)下载(.mcmeta文件也要一起下载!)
 			.tag(MODID + "fluid") // 添加流体tag(可选)
 	})
 })

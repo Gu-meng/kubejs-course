@@ -85,6 +85,9 @@ kjs创建物品是非常简单的，只需要一行就可以解决
 |            containerItem(ResourceLocation)            |                 ~                  | 设置物品为容器???  |      this       |
 
 ## 简单的注册物品轮子
+
+**注:以下内容根据个人习惯选择性使用和更改**
+
 ```js
 StartupEvents.registry("item", (event) => {
 	// ModID声明如果选择不更改ModID(默认即"kubejs")直接把ModID这个变量取消
