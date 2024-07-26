@@ -67,8 +67,8 @@
 	  ```
       `loader`表示要加载的类型,这里指定obj模型\
 	  `model`表示要加载的Obj模型路径\
-	  `flip_v`表示是否翻转贴图,因为`obj`模型贴图相对于MC来说是倒着的，所以要`true`\
-	  `textures`表示要加载的贴图，这里指定`particle`贴图来确定粒子
+	  `flip_v`表示是否翻转贴图,因为`obj`模型贴图相对于MC来说是倒着的,所以要`true`\
+	  `textures`表示要加载的贴图,这里指定`particle`贴图来确定粒子
 
   * ### 确定`blockstate`
     * 在加载`obj`模型时,需要确定`blockstate`,因为`blockstate`在加载`Obj`时不会自动生成的,因此会导致无法让方块确定模型
@@ -104,9 +104,9 @@
 	* ### 检查路径
       `mtl`和`obj`指向`obj`模型的`json`文件放在`assets/${modid}/models/block`下\
 	  `png`则放在`assets/${modid}/textures/block`下\
-	  确定blockstate的json文件需要放在`assets/${modid}/blockstate`下\
+	  确定`blockstate`的`json`文件需要放在`assets/${modid}/blockstate`下\
 	  同时要该文件命名都为方块注册名\
-	  注意导出模型在游戏里面有所偏移，在制作模型时修改即可
+	  注意导出模型在游戏里面有所偏移,在制作模型时修改即可
 
 	# 参考自
 	[[我的世界 1.20.4 NeoForge 最新模组教程]18 加载OBJ模型](https://www.bilibili.com/video/BV1jm421J7UR)\
