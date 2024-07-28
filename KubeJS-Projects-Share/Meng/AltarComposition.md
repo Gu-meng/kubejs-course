@@ -16,7 +16,12 @@ const { $ItemEntity } = require("packages/net/minecraft/world/entity/item/$ItemE
 const { $BlockPos } = require("packages/net/minecraft/core/$BlockPos");
 
 StartupEvents.registry("block", event => {
-    event.create("meng:test_block", "basic").hardness(1).defaultCutout()
+    event.create("meng:test_block", "basic")
+        .hardness(1)
+        .defaultCutout()
+        .box(1,0,1,15,3,15,true)
+        .box(4,3,4,12,21,12,true)
+        .box(6,21,6,10,21.2,10,true)
         .blockEntity(e => {
             e.inventory(1, 1)
             e.initialData({ item: "minecraft:air" })
@@ -61,7 +66,7 @@ function removeFloatItem(world,itemId,pos){
     world.getEntities($EntityType.ITEM, (value) => {
         // value type is $ItemEntity
         if (value.item.getId() == itemId) {
-            if (value.x == x + 0.5 && value.y == y + 1.32 && value.z == z + 0.5) {
+            if (value.x == x + 0.5 && value.y == y + 1.42 && value.z == z + 0.5) {
                 // 删除物品的方式是丢弃(discarded)
                 value.remove("discarded")
                 return true
@@ -83,7 +88,7 @@ function itemFloat(world,item,block){
      * @type {$ItemEntity}
      */
     let itemEntity = world.createEntity("item")
-    itemEntity.setPos(x + 0.5, y + 1.32, z + 0.5)
+    itemEntity.setPos(x + 0.5, y + 1.42, z + 0.5)
     itemEntity.item = item
     itemEntity.age = -32768
     itemEntity.setPickUpDelay(-1)
@@ -330,7 +335,7 @@ BlockEvents.broken("meng:test_block", e => {
     let world = block.getLevel()
     if (data.get("item") == "minecraft:air") return
     world.getEntities($EntityType.ITEM, (value) => {
-        if (value.x == x + 0.5 && value.y == y + 1.32 && value.z == z + 0.5) {
+        if (value.x == x + 0.5 && value.y == y + 1.42 && value.z == z + 0.5) {
             value.age = 0
             value.setPickUpDelay(0)
             value.setNoGravity(false)
