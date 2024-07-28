@@ -413,4 +413,5 @@ JEIAddedEvents.registerRecipeCatalysts(jei =>{
 1. 该项目的配方检测全是字符串，并不是ItemStack所以无法检测nbt，如需请自行更改
 2. 该项目只是作为示例，很多地方并不是最优解，可自行进行解决
 3. 如果对该项目代码部分不满可以将修改好的代码上传至[gitee项目仓库](https://gitee.com/gumengmengs/kubejs-course)
-4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/code/projects/AltarComposition/)
+4. 项目完整代码[在这里](https://gitee.com/gumengmengs/kubejs-course/tree/main/code/Projects/AltarComposition/kubejs)
+5. 因为物品渲染使用的物品掉落物实体，所以会被kill @e[type="item"] 给清理掉，所以得注意一下(可以考虑写一个方块tick事件去检测解决)
