@@ -29,7 +29,7 @@
 | ServerEvents  |           tags           |           -           |                       -                        |
 | ServerEvents  |     commandRegistry      |     指令注册事件      |                       -                        |
 | ServerEvents  |         command          |    服务器指令事件     |                       -                        |
-| ServerEvents  |      customCommand       |      自定义指令       |                       -                        |
+| ServerEvents  |      customCommand       |      自定义指令       |  [链接](/kjs-jin-jie/zi-ding-yi-zhi-ling.md)   |
 | ServerEvents  |         recipes          |       配方事件        |      [链接](./ji-chu-xie-fa-tian-jia.md)       |
 | ServerEvents  |       afterRecipes       | 配方事件后处理(有bug) |                       -                        |
 | ServerEvents  | specialRecipeSerializers |           -           |                       -                        |

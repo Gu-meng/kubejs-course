@@ -27,6 +27,7 @@
     * [添加流体](/KubeJS-Basics/Customs/tian-jia-liu-ti.md)
     * [添加附魔](/KubeJS-Basics/Customs/tian-jia-fu-mo.md)
     * [添加药水](/KubeJS-Basics/Customs/tian-jia-yao-shui.md) 
+    * [添加药水效果](/KubeJS-Basics/Customs/tian-jia-yao-shui-xiao-guo.md) 
 * [kjs资源路径文件夹](/cai-zhi/README.md)
   * [lang文件](/cai-zhi/lang.md)
   * [贴图](/cai-zhi/tie-tu.md)
@@ -85,3 +86,4 @@
 * [项目分享](/KubeJS-Projects-Share/README.md) 
   * [工作台物品附魔](/KubeJS-Projects-Share/Wolf/EnchantOnTable.md)
   * [祭坛合成](/KubeJS-Projects-Share/Meng/AltarComposition.md)
+  * [玩家禁言](/KubeJS-Projects-Share/Meng/NoChat.md)
