@@ -7,6 +7,7 @@
   * [所有事件使用](/KubeJS-Basics/AllEvent.md)
   * [基础写法-配方添加](/KubeJS-Basics/ji-chu-xie-fa-tian-jia.md)
   * [基础写法-删除和修改](/KubeJS-Basics/ji-chu-xie-fa-shan-chu-he-xiu-gai.md)
+  * [万用配方修改(添加)]()
   * [修改窗口标题和logo](/KubeJS-Basics/xiu-gai-chuang-kou-biao-ti-he-logo.md)
   * [物品提示](/KubeJS-Basics/wu-pin-ti-shi.md)
   * [战利品](/KubeJS-Basics/LootTables/README.md)
@@ -87,3 +88,4 @@
   * [工作台物品附魔](/KubeJS-Projects-Share/Wolf/EnchantOnTable.md)
   * [祭坛合成](/KubeJS-Projects-Share/Meng/AltarComposition.md)
   * [玩家禁言](/KubeJS-Projects-Share/Meng/NoChat.md)
+  * [服务器签到](/KubeJS-Projects-Share/Meng/SignIn.md)
