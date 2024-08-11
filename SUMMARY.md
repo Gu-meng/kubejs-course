@@ -7,7 +7,7 @@
   * [所有事件使用](/KubeJS-Basics/AllEvent.md)
   * [基础写法-配方添加](/KubeJS-Basics/ji-chu-xie-fa-tian-jia.md)
   * [基础写法-删除和修改](/KubeJS-Basics/ji-chu-xie-fa-shan-chu-he-xiu-gai.md)
-  * [万用配方修改(添加)]()
+  * [万用配方修改(添加)](/KubeJS-Basics/Custom.md)
   * [修改窗口标题和logo](/KubeJS-Basics/xiu-gai-chuang-kou-biao-ti-he-logo.md)
   * [物品提示](/KubeJS-Basics/wu-pin-ti-shi.md)
   * [战利品](/KubeJS-Basics/LootTables/README.md)
