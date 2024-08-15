@@ -49,8 +49,6 @@ ServerEvents.recipes((event) => {
     const { create } = event.recipes
 })
 ```
-这里的xxxxx就是我们下面单独的代码了
-
 如果标注支持**加热**那么也支持**超级加热**
 
 只需要在机器后面添加`.heated()`或者`superheated()`,前者是普通加热后者是超级加热
