@@ -36,6 +36,7 @@
   * [模型](/cai-zhi/mo-xing.md)
 * [kjs进阶](/kjs-jin-jie/README.md)
   * [配方添加进阶](/kjs-jin-jie/pei-fang-he-cheng-jin-jie.md)
+  * [创造物品栏](/kjs-jin-jie/CreativeTab.md)
   * [自定义指令](/kjs-jin-jie/zi-ding-yi-zhi-ling.md)
   * [物品属性修改](/KubeJS-Basics/be-editing/wu-pin-shu-xing-xiu-gai.md)
   * [世界生成](/kjs-jin-jie/worldgen.md)
