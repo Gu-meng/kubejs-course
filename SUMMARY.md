@@ -23,6 +23,7 @@
       * [唱片添加](/KubeJS-Basics/Customs/item-type/chang-pian.md)
       * [食物添加](/KubeJS-Basics/Customs/item-type/food.md)
       * [工具添加](/KubeJS-Basics/Customs/item-type/tools.md)
+      * [右键使用物品](/KubeJS-Basics/Customs/item-type/use.md)
     * [添加方块](/KubeJS-Basics/Customs/tian-jia-fang-kuai.md)
     * [添加方块示例](/KubeJS-Basics/Customs/block-type/README.md)
     * [添加流体](/KubeJS-Basics/Customs/tian-jia-liu-ti.md)
