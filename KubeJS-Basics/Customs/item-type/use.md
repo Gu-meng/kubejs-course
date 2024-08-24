@@ -26,11 +26,14 @@ StartupEvents.registry('item', event => {
          * 当物品成功使用后（持续右键经过一个完整的useDuration）后的行为
          */
         .finishUsing((itemstack, level, entity) => {
-            let effects = entity.potionEffects
-            effects.add('minecraft:haste', 120 * 20)
+            entity.potionEffects.add('minecraft:haste', 120 * 20)
             itemstack.shrink(1)
             if (entity.player) {
-                entity.minecraftPlayer.addItem(Item.of('minecraft:glass_bottle').itemStack)
+                /**
+                 * @type {$Player_} - 判断是否为玩家，通过后重申entity的类型
+                 */
+                let player = entity
+                player.addItem(Item.of('minecraft:glass_bottle').itemStack)
             }
             return itemstack
         })
