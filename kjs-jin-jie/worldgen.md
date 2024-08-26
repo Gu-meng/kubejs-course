@@ -1,4 +1,4 @@
-# 世界生成(WorldGen)
+# 世界生成(WorldGen)(非常不建议在1.20使用!1.20建议使用数据包)
 
 * ## **事件声明**
 `WorldgenEvents`事件组可于世界相关修改，其包含`WorldgenEvents.add`和`WorldgenEvents.remove`两个事件

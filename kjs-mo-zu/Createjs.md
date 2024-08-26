@@ -29,7 +29,7 @@
 |                           `create.splashing(output[], input[])`                           |   洗涤(鼓风机+水)   |                      -                      |
 |                           `create.haunting(output[], input[])`                            | 缠魂(鼓风机+灵魂火) |                      -                      |
 |                           `create.deploying(output[], input[])`                           |       机械手        |                      -                      |
-|                       `create.item_application(output[], input[])`                        |      直接使用       |       参考几种机壳的配方(1.18及以上)        |
+|                       `create.item_application(output, input)`                        |      直接使用       |       参考几种机壳的配方(1.18及以上)        |
 |                            `create.filling(output[], input[])`                            |        注液         |                      -                      |
 |                           `create.emptying(output[], input[])`                            |        分液         |                      -                      |
 |                  `create.mechanicalCrafting(output[], pattern[], {key})`                  |      动力合成       |               详细见下方示例                |
