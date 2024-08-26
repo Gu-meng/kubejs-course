@@ -16,36 +16,36 @@
 
 ```json
 {
-  "type": "aoa3:infusion",
-  "ingredients": [
-    {
-      "item": "aoa3:padded_cloth"
-    },
-    {
-      "item": "aoa3:padded_cloth"
-    },
-    {
-      "item": "aoa3:armour_plating"
-    },
-    {
-      "item": "aoa3:rainbow_druse"
-    },
-    {
-      "item": "aoa3:rainbow_druse"
-    },
-    {
-      "item": "aoa3:green_druse"
-    },
-    {
-      "item": "aoa3:blue_druse"
-    }
-  ],
-  "input": {
-    "item": "aoa3:helmet_frame"
-  },
-  "result": {
-    "item": "aoa3:crystallis_helmet"
-  }
+	"type": "aoa3:infusion",
+	"ingredients": [
+		{
+			"item": "aoa3:padded_cloth"
+		},
+		{
+			"item": "aoa3:padded_cloth"
+		},
+		{
+			"item": "aoa3:armour_plating"
+		},
+		{
+			"item": "aoa3:rainbow_druse"
+		},
+		{
+			"item": "aoa3:rainbow_druse"
+		},
+		{
+			"item": "aoa3:green_druse"
+		},
+		{
+			"item": "aoa3:blue_druse"
+		}
+	],
+	"input": {
+		"item": "aoa3:helmet_frame"
+	},
+	"result": {
+		"item": "aoa3:crystallis_helmet"
+	}
 }
 ```
 
@@ -53,31 +53,30 @@
 在上面我们找到了聚合台的配方添加写法，kjs提供了数据包的添加配方方式，这样我们就可以照葫芦画瓢的写一个配方
 
 ```js
-ServerEvents.recipes(e=>{
-    e.custom(
-        {
-            "type": "aoa3:infusion",
-            "ingredients": [
-              {
-                "item": 'minecraft:soul_lantern'
-              },
-              {
-                "item": 'minecraft:soul_lantern'
-              },
-              {
-                "item": 'minecraft:lantern'
-              },
-              {
-                "item": 'minecraft:lantern'
-              }
-            ],
-            "input": {
-              "item": 'minecraft:emerald'
-            },
-            "result": {
-              "item": "minecraft:grass_block"
-            }
-          })
+ServerEvents.recipes(e => {
+	e.custom({
+		"type": "aoa3:infusion",
+		"ingredients": [
+			{
+				"item": "minecraft:soul_lantern"
+			},
+			{
+				"item": "minecraft:soul_lantern"
+			},
+			{
+				"item": "minecraft:lantern"
+			},
+			{
+				"item": "minecraft:lantern"
+			}
+		],
+		"input": {
+			"item": "minecraft:emerald"
+		},
+		"result": {
+			"item": "minecraft:grass_block"
+		}
+	})
 })
 ```
 
