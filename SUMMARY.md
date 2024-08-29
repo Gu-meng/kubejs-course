@@ -5,6 +5,8 @@
   * [前言](/KubeJS-Basics/qian-yan.md)
   * [认识kjs的文件夹](/KubeJS-Basics/wen-jian-fen-lei.md)
   * [所有事件使用](/KubeJS-Basics/AllEvent.md)
+  * [游戏资源调用](/KubeJS-Basics/GameSources.md)
+  * [ProbeJS查找注册名](/KubeJS-Basics/RegisterType.md)
   * [基础写法-配方添加](/KubeJS-Basics/ji-chu-xie-fa-tian-jia.md)
   * [基础写法-删除和修改](/KubeJS-Basics/ji-chu-xie-fa-shan-chu-he-xiu-gai.md)
   * [万用配方修改(添加)](/KubeJS-Basics/Custom.md)
