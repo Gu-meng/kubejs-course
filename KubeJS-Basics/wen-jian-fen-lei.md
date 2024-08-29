@@ -1,5 +1,12 @@
 ## 认识KubeJS的文件夹
-kjs在第一次运行后，会在版本文件夹下创建一个自己的魔改文件夹 **`kubejs`** ，在该文件夹里有 **`assets`** **`client_scripts`** **`config`** **`data`** **`server_scripts`** **`startup_scripts`** 这些文件夹，下面会介绍这些文件夹所存放的类型
+kjs在第一次运行后，会在版本文件夹下创建一个自己的魔改文件夹 **`kubejs`** ，在该文件夹里有 
+**`assets`**
+**`data`** 
+**`client_scripts`** 
+**`config`** 
+**`server_scripts`**
+**`startup_scripts`** 
+这些文件夹，下面会介绍这些文件夹所存放的类型
 
 **`assets`** 是存放材质的，比如lang文件或者物品贴图和模型等都在该文件夹内进行更改
 > **KubeJS 6不建议使用KubeJS内置资源包或数据包, KubeJS 6的资源加载优先级比资源包都低, 别人加个资源包就会覆盖掉了, 当然你要是说加资源包是玩家的自由那我无话可说**
