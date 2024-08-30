@@ -91,5 +91,6 @@
 * [项目分享](/KubeJS-Projects-Share/README.md) 
   * [工作台物品附魔](/KubeJS-Projects-Share/Wolf/EnchantOnTable.md)
   * [祭坛合成](/KubeJS-Projects-Share/Meng/AltarComposition.md)
+  * [下落合成](/KubeJS-Projects-Share/Meng/FallItem.md)
   * [玩家禁言](/KubeJS-Projects-Share/Meng/NoChat.md)
   * [服务器签到](/KubeJS-Projects-Share/Meng/SignIn.md)

@@ -3,7 +3,9 @@
 
 直接访问该项目[gitbook网页](https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1)
 
-该项目的[开源地址](https://gitee.com/gumengmengs/kubejs-course)
+该项目的[开源地址Gitee](https://gitee.com/gumengmengs/kubejs-course)
+
+该项目的[开源地址GitHub](https://github.com/Gu-meng/kubejs-course) GitHub不支持内容提交
 
 孤梦的[bilibili主页](https://space.bilibili.com/16632546)
 
