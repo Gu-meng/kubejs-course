@@ -54,3 +54,266 @@ ServerEvents.recipes(event=>{
 答:
 
 在官方给的筛子中可以看到有高级黄铜筛网，如果将筛网填写为高级黄铜筛网或者你自己注册的物品类型为`advanced_mesh`，就会识别到黄铜筛子当中，其他的都会被识别到普通筛子当中
+
+## 关于配方修改的简单轮子
+```js
+// 线筛网
+function stringMesh(output,input,time,isWater){
+    sifting(output,[input,'createsifter:string_mesh'],time,isWater);
+}
+
+// 安山筛网
+function andesiteMesh(output,input,time,isWater){
+    sifting(output,[input,'createsifter:andesite_mesh'],time,isWater);
+}
+// 锌筛网
+function zincMesh(output,input,time,isWater){
+    sifting(output,[input,'createsifter:zinc_mesh'],time,isWater);
+}
+// 黄铜筛网
+function brassMesh(output,input,time,isWater){
+    sifting(output,[input,'createsifter:brass_mesh'],time,isWater);
+}
+// 高级黄铜筛网
+function advancedBrassMesh(output,input,time,isWater){
+    sifting(output,[input,'createsifter:advanced_brass_mesh'],time,isWater);
+}
+
+/**
+ * 
+ * @param {*} output 
+ * @param {*} input 
+ * @param {*} time 不填写默认为5秒
+ * @param {*} isWater 不填写默认为false
+ */
+function sifting(output,input,time,isWater){
+    if(time == undefined) time = 5
+    if(isWater == undefined) isWater = false
+    ServerEvents.recipes(event=>{
+        const createsifter = event.recipes.createsifter;
+        createsifter.sifting(output,input,time * 20,isWater);
+    });
+}
+```
+在使用时只需要调用stringMesh();
+
+就不用每次重复传入筛网了
+
+## 关于筛网材质模型问题
+孤梦这边简单整了一个模型(当然大家也可以自己去把官方的模型)
+
+模型需要放在`/assets/modid/models/item/itemId.js/`
+
+这里的modid是你的模组id
+
+itemId是你的物品id
+
+这里简答说一下，如果直接更改的话
+1. 0代表中间网格使用的材质
+2. 1代表筛网边框使用的材质
+```json
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "minecraft:block/iron_block",
+		"1": "minecraft:block/oak_planks",
+		"particle": "minecraft:block/iron_block"
+	},
+	"elements": [
+		{
+			"from": [15, 0, 0],
+			"to": [16, 1, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 0, 16]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 1], "texture": "#1"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 1], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 1], "rotation": 270, "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 1], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [1, 1, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 16]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "rotation": 90, "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 1], "texture": "#1"},
+				"south": {"uv": [0, 0, 1, 1], "rotation": 270, "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 1], "rotation": 180, "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 1], "rotation": 270, "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 1], "rotation": 270, "texture": "#1"}
+			}
+		},
+		{
+			"from": [1, 0, 0],
+			"to": [15, 1, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#1"}
+			}
+		},
+		{
+			"from": [1, 0, 15],
+			"to": [15, 1, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 15]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#1"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#1"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 0, 1],
+			"to": [7, 1, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 0, 17]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [9, 0, 1],
+			"to": [10, 1, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [9, 0, 17]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 0, 1],
+			"to": [14, 1, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 17]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 3],
+			"to": [15, 1, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 3]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 6],
+			"to": [15, 1, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 6]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 12],
+			"to": [15, 1, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 12]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 0, 9],
+			"to": [15, 1, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 0, 1],
+			"to": [3, 1, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 17]},
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"east": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#0"},
+				"west": {"uv": [0, 0, 14, 1], "texture": "#0"},
+				"up": {"uv": [0, 0, 14, 1], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 1], "rotation": 90, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [-5.5, 3, -3.5],
+			"scale": [0.84, 0.92, 0.99]
+		},
+		"firstperson_righthand": {
+			"rotation": [13, 0, 0],
+			"translation": [8.25, 1.75, -12.75],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0]
+		},
+		"gui": {
+			"rotation": [97, 0, 0],
+			"translation": [0, -0.5, 0],
+            "scale": [0.8, 0.8, 0.8]
+		},
+		"fixed": {
+			"rotation": [90, 0, 0],
+			"scale": [1, 0.04, 1]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [1, 0, 11],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		},
+		{
+			"name": "group",
+			"origin": [10, 0, 17],
+			"color": 0,
+			"children": [4, 5, 6, 7, 8, 9, 10]
+		},
+		11
+	]
+}
+```
