@@ -51,6 +51,7 @@
   * [BotanyPotsJS](/kjs-mo-zu/BotanyPotsJS.md)
   * [CreateJS(机械动力)](/kjs-mo-zu/Createjs.md)
   * [CreateHeatJS(机械动力热量)](/kjs-mo-zu/CreateHeatJS.md)
+  * [CreateSifting(机械动力：筛子)](/kjs-mo-zu/CreateSifting.md)
   * [DelightJS](kjs-mo-zu/DelightJS.md)
   * [JEI&REIJS](kjs-mo-zu/JEIJS.md)
   * [MoreJS](kjs-mo-zu/MoreJS.md)
