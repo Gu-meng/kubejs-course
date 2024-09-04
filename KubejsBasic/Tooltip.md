@@ -53,6 +53,8 @@ ItemEvents.tooltip((event) =>{
 
 首先你得像写材质包一样在`assets`文件夹下创建一个材质包路径，然后创建一个`lang`文件夹,然后再进行翻译的书写,我这里的路径为：`assets/meng/lang`
 
+关于lang文件的名称和对应的语音我们可以看-> [lang文件命名对照表](../Digression/LangFileNamingChart.md)
+
 这里我的`zh_cn.json`是这样写的
 ```json
 {

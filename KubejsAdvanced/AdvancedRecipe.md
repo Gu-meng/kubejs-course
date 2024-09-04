@@ -1,6 +1,8 @@
 # 配方合成进阶
 ## 合成附带nbt modifyResult
 下面代码是使用工作台里使用钻石剑+附魔书进行合成出带附魔效果的,如果有更高等级的附魔将直接覆盖低等级附魔
+
+这段代码只是示范modifyResult该如何去使用提供的一个示例，具体使用场景可更改
 ```js
 ServerEvents.recipes((event) => {
 	event.shapeless(Item.of('minecraft:diamond_sword'), [

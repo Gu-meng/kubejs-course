@@ -33,7 +33,7 @@ StartupEvents.modifyCreativeTab("meng:items", (event) => {
 |     removeSearch(Ingredient)     |     匹配相符物品删除     |
 |        setIcon(ItemStack)        |   设置创造物品栏的图标   |
 | addBefore(ItemStack,ItemStack[]) |    在哪个物品之前添加    |
-|    removeDisplay(Ingredient)     |            -             |
+|    removeDisplay(Ingredient)     |            ?             |
 | addAfter(ItemStack,ItemStack[])  |    在哪个物品之后添加    |
 |    setDisplayName(Component)     | 设置创造物品栏的显示名称 |
 |          add(ItemStack)          |  添加物品进穿这个物品栏  |

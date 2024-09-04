@@ -46,6 +46,8 @@
   * [global全局变量](/KubejsAdvanced/GlobalVariable.md)
   * [RecipesSchema简单教程](/KubejsAdvanced/RecipesSchemaAdded.md)
 * [kjs模组](/KubejsAddon/README.md)
+  * [KubeJSAdditions](/KubejsAddon/KubeJSAdditions/README.md)
+    * [关于事件](/KubejsAddon/KubeJSAdditions/Events.md)
   * [AdvancementJS(进度)](/KubejsAddon/AdvancementJS.md)
   * [ArsNouveauJS(新生魔艺)](/KubejsAddon/ArsNouveauJS.md)
   * [BotaniaJS(植物魔法)](/KubejsAddon/BotaniaJS.md)

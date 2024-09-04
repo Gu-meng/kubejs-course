@@ -16,11 +16,11 @@ kjs在第一次运行后，会在版本文件夹下创建一个自己的魔改�
 **`data`** 是写数据包的，KubeJS支持直接写全局数据包，让创建世界时默认加载该数据
 > **和上面的一样, 建议使用别的Mod进行内置**
 
-**`config`** 是存放配置文件的，可以自己定义一些配置文件丢里面
+**`config`** 是存放配置文件的，可以自己定义kubejs提供的配置文件进行修改
 > **只是说KubeJS自己所提供的配置文件, 例如图标和窗口标题的修改等**
 
-**`client_scripts`** 客户端代码，除了逻辑处理代码可以写在客户端里，比如游戏内的物品渲染等，使用F3+T时重载, 同时可以用`kubejs reload client_scripts`指令进行脚本的重载(一般用于PonderJS等Mod)
+**`client_scripts`** 客户端代码，除了逻辑处理代码可以写在客户端里，比如游戏内的物品渲染等，使用F3+T时重载, 同时可以用`kubejs reload client_scripts`指令进行脚本的重载(一般用于PonderJS等Mod)，在不考虑重载资源贴图的情况下，建议使用`kubejs reload client_scripts`这样游戏加载会更快
 
-**`server_scripts`** 服务端运行的代码，在大部分逻辑处理代码都是由服务端运行，所以大部分代码写在该文件夹内就可以，使用`reload`时重载
+**`server_scripts`** 服务端运行的代码，在大部分逻辑处理代码都是由服务端运行，所以大部分代码写在该文件夹内就可以，使用`reload`时重载所有内容，使用`kubejs reload server_scripts` 重载脚本，但是无法重载配方，在不重载配方的情况下是可以使用`kubejs reload server_scripts`来重载脚本的，这样重载的也会更快
 
-**`startup_scripts`** 在游戏加载时运行的代码，比如添加物品、方块流体等 在游戏内可以使用`kubejs reload startup_scripts`指令进行重载(**注册新东西不能热重载, 只能重启游戏**)
+**`startup_scripts`** 在游戏加载时运行的代码，比如添加物品、方块流体等，在游戏内可以使用`kubejs reload startup_scripts`指令进行重载脚本(**注册新东西不能热重载, 只能重启游戏**)
