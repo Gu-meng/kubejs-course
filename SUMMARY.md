@@ -44,6 +44,7 @@
   * [物品属性修改](/KubejsAdvanced/ItemAttributeModify.md)
   * [世界生成](/KubejsAdvanced/WorldGen.md)
   * [global全局变量](/KubejsAdvanced/GlobalVariable.md)
+  * [RecipesSchema简单教程](/KubejsAdvanced/RecipesSchemaAdded.md)
 * [kjs模组](/KubejsAddon/README.md)
   * [AdvancementJS(进度)](/KubejsAddon/AdvancementJS.md)
   * [ArsNouveauJS(新生魔艺)](/KubejsAddon/ArsNouveauJS.md)
