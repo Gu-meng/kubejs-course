@@ -47,7 +47,7 @@ ServerEvents.recipes((event) => {
 
 介绍和示例就演示到这里, 下面开始正文(完整的代码在下面👇)
 
-首先请先下载这个Schema配方文件[**RecipesSchema**](/files/RecipesSchema.java), 这个文件内有着各种类型的组件, 在编写的时候需要很频繁的查阅这些东西
+首先请先下载这个Schema配方文件[**RecipesSchema**](/Files/RecipesSchema.java), 这个文件内有着各种类型的组件, 在编写的时候需要很频繁的查阅这些东西
 
 然后去[**迺逸夫老师的GitHub**](https://github.com/Prunoideae/-recipes/blob/1.20.1/src)仓库下载[**prelude.js**](https://github.com/Prunoideae/-recipes/blob/1.20.1/src/prelude.js), 这个文件是逸夫老师事先写好的轮子, 可以非常大程度的提升编写效率
 
@@ -71,7 +71,7 @@ new Schema("createmetallurgy:casting_in_table")
 
 下面开始添加`.simpleKey()`方法, 第一个参数内填入键名, 也就是配方文件中对应的各种`一级键名`, 例如`ingredients` `processingTime` `result`等
 
-第二个就是需要填入的类型, 这个需要在上面提到的[**Java文件**](/files/RecipesSchema.java)进行查看
+第二个就是需要填入的类型, 这个需要在上面提到的[**Java文件**](/Files/RecipesSchema.java)进行查看
 
 第三个就是填入可选的内容, 其中字符串需要列举出来, 使用`||`进行分隔, 例如`"superheated" || "heated"`
 
@@ -95,14 +95,14 @@ new Schema("createmetallurgy:casting_in_table")
 
 ![4](/imgs/Schema/4.png)
 
-根绝**猜测**, 这种配方类型**似乎**只能输出一种物品, 因此我们在[Java文件](/files/RecipesSchema.java)内找到带关键词的单词`outputItem` `输出物品`, 然后我们先把这个写进去, 后面如果不行我们继续慢慢改
+根据**猜测**, 这种配方类型**似乎**只能输出一种物品, 因此我们在[Java文件](/Files/RecipesSchema.java)内找到带关键词`output` `item`的单词`outputItem` `输出物品`, 然后我们先把这个写进去, 后面如果不行我们继续慢慢改
 
 ```js
 new Schema("createmetallurgy:casting_in_basin")
 	.simpleKey("result", "outputItem")
 ```
 
-来到第二个`ingredients`, 和上面的`results`一样, 后面带个s, 并且根据上图的配方来看, 这是一个`多输出`的配方(熔融铁和板子模具), 接下来我们去看`Json`文件
+接下来是第二个`ingredients`, 和上面的`results`一样, 后面带个s, 并且根据上图的配方来看, 这是一个`多输出`的配方(熔融铁和板子模具), 接下来我们去看`Json`文件
 
 ![5](/imgs/Schema/5.png)
 
@@ -127,13 +127,13 @@ ServerEvents.recipes((event) => {
 
 因此我们需要将这两项也写上, 这两个都比较简单
 
-首先是`加工时间`, 加工时间用的是数字(单位**Tick**), 因此其实随便找一个和数字(**Number**)有关的就好, 第三个参数表现的时间可写可不写, 但最好随便写个数字
+首先是`加工时间`, 加工时间用的是数字(单位[**Tick**](https://zh.minecraft.wiki/w/刻#游戏刻与计算速率)), 因此其实随便找一个和数字(**Number**)有关的就好, 第三个参数表现的时间可写可不写, 但最好随便写个数字
 
-我这里用的是`doubleNumber`, 这种时间的一般用`方法`表示
+我这里用的是`doubleNumber`, 这种加工时间的一般在方法后用`方法`表示
 
 ![7](/imgs/Schema/7.png)
 
-接下来是`模具消耗(mold_consumed)`, 这个在原文件中使用的是`布尔值(true/false)`, 因此和上面一样, 随便找一个可以表示布尔的即可, 第三个参数吧可选的`true`和`false`加上
+接下来是`模具消耗(mold_consumed)`, 这个在原文件中使用的是`布尔值(true/false)`, 因此和上面一样, 随便找一个可以表示布尔的即可, 第三个参数把可选的`true`和`false`加上
 
 然后进游戏`dump`一下, 写一个完整的配方
 
