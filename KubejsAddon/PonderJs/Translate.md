@@ -54,23 +54,11 @@ Ponder.tags((event) => {
 
 ```js
 Ponder.registry(event => {
-    ↓
-    ==
-    ↑
     event.create("minecraft:iron_block")
         .tag("kubejs:iron_golem")
         .scene("kubejs:iron_golem_1", "召唤铁傀儡", (scene, util) => {
-    ↓
-    ==
-    ↑
             scene.text(25, '想要召唤铁傀儡\n首先, 你需要将四个铁块以 §bT§r 字摆放');
-    ↓
-    ==
-    ↑
             scene.text(20, '注意 : §4这四个位置必须是空气方块§r\n任何非空气方块（包括雪、高草和水）在这四个位置时都会阻碍铁傀儡的生成');
-    ↓
-    ==
-    ↑
        });
 });
 ```
