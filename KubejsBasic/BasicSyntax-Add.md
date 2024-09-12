@@ -99,7 +99,7 @@ ServerEvents.recipes(event => {
     ]).id("meng_sand");
 });
 ```
-[**配方ID详细讲解传送门**](../Digression/RecipeId)
+[**配方ID详细讲解传送门**](../Digression/RecipeId.md)
 
 这里注意一下，如果你直接像上面一样写，该配方id则为minecraft下的配方
 

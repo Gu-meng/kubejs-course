@@ -68,7 +68,7 @@ Item.of("物品id", 数量).withChance(0.5)
 
 如果标注可以输出多个物品则是可以像下面这种写法
 ```js
-[Item.of("物品id", 数量),Item.of("物品id", 数量)]
+[Item.of("物品id", 数量), Item.of("物品id", 数量)]
 ```
 这里可以注意的一点，如果标注了可以输出多个物品和概率，那么也可以在`of()`加上`.withChance()`
 
@@ -116,9 +116,9 @@ create.pressing([
 
 **压块**和**压片**的第一个参数是<font color=yellow>输出物品和流体,可以使用数组形式,也可以给物品后面添加<font color=blue>.withChance()</font>来添加输出概率,这里注意的是,1为100%</font>,第二个参数是<font color=yellow>输入物品</font>
 
-如果在后面添加<font color=blue>.heated()</font>是需要加热
+如果在后面添加<font color=red>.heated()</font>是需要加热
 
-如果在后面添加<font color=blue>.superheated()</font>是需要超级加热
+如果在后面添加<font color=red>.superheated()</font>是需要超级加热
 ### 动力搅拌机
 ```js
 // 混合搅拌 - 多个输入
