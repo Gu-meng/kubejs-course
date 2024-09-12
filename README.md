@@ -3,7 +3,7 @@
 
 直接访问该项目[gitbook网页](https://gumeng.gitbook.io/kubejs-jiao-cheng-1.20.1)
 
-项目的[第三方授权文档](https://docs.mihono.cn/zh/modpack/kubejs/KubejsCourse/README) gitbook访问不了的最佳选择(很快但不能保证最新)
+项目的[第三方授权文档](https://docs.mihono.cn/zh/modpack/kubejs/1.20.1/KubejsCourse/README) gitbook访问不了的最佳选择(很快但不能保证最新)
 
 该项目的[开源地址Gitee](https://gitee.com/gumengmengs/kubejs-course)
 
