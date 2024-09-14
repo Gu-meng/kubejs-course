@@ -90,7 +90,7 @@
   * [稀有度](/Digression/Rarity.md)
   * [命名空间](/Digression/NameSpace.md)
   * [附魔保护机制](/Digression/ProtectionEnchantMechanism.md)
-  * [BlockBench基础使用](/Digression/BlockbenchBasic.md)
+  * [BlockBench基础使用教程](/Digression/BlockbenchBasic.md)
   * [Forge端读取obj模型](/Digression/ForgeReadObjModel.md)
   * [lang文件命名对照表](/Digression/LangFileNamingChart.md)
   * [饱食度和饱和度](/Digression/SaturationHunger.md)
