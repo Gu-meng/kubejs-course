@@ -48,7 +48,7 @@ StartupEvents.registry("block", (event) => {
 |               `speedFactor(float)`                |                     ->                      |         设置方块速度(高于1会速度很快)          |   this   |
 |                `jumpFactor(float)`                |                     ->                      |                设置方块跳跃高度                |   this   |
 |               `noValidSpawns(bool)`               |                     ->                      |             该方块上是否会生成生物             |   this   |
-|                   `notSolid()`                    |                      -                      |            设置方块像沙子一样会下落            |   this   |
+|                   `notSolid()`                    |                      -                      |           ?            |   this   |
 |                  `unbreakable()`                  |                      -                      |                 使方块无法破坏                 |   this   |
 |                `resistance(float)`                |                     ->                      |          设置方块的耐爆炸性(默认为3)           |   this   |
 |                 `requiresTool()`                  |                      -                      |       设置方块需要对应的工具挖掘才会掉落       |   this   |
