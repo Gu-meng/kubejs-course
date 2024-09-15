@@ -1,5 +1,5 @@
 # global全局变量
-在KubeJS中，提供了一个可以在`server`、`startup`、`client`三端调用的一个全局遍历->`global`
+在KubeJS中，提供了一个可以在`server`、`startup`、`client`三端调用的一个全局变量->`global`
 
 ## 如何快速理解
 我们先在`server`的脚本文件夹下创建一个`GlobalTest.js`文件，然后在里面写上以下内容
