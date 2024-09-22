@@ -143,13 +143,16 @@ StartupEvents.registry('item', (event) => {
 ```json
 {
     "item.meng.mymusic": "音乐唱片",
-    "jukebox_song.meng.mymusic": "我的音乐 - 私人歌手"
+    "jukebox_song.meng.mymusic": "我的音乐 - 私人歌手",
+    "sound.meng.mymusic": "我的音乐"
 }
 ```
 
 第一个为唱片本身的文本信息
 
 第二个为唱片的音乐信息
+
+第三个为[字幕](https://minecraft.wiki/w/Subtitles)中的文本信息(1.21.1+)
 
 材质路径为`kubejs/assets/meng/textures/item` 将已经画好的唱片材质放在该路径下并命名为`my_music.png` 这里和物品id名称一样
 
