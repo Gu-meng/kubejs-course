@@ -138,6 +138,15 @@ StartupEvents.registry('item', (event) => {
 }
 ```
 
+### 在 1.21.1+ 时
+
+```json
+{
+    "item.meng.mymusic": "音乐唱片",
+    "jukebox_song.meng.mymusic": "我的音乐 - 私人歌手"
+}
+```
+
 第一个为唱片本身的文本信息
 
 第二个为唱片的音乐信息
