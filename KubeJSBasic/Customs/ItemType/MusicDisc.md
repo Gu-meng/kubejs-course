@@ -114,7 +114,7 @@ StartupEvents.registry('item', (event) => {
 ```json
 {
     // 这里的 'meng:my_music' 指的是刚才在注册唱片音频那里的 `music_id`
-    "meng:my_music": {
+    "music.my_music": {
         // 固定格式
         "sounds": [
             {
