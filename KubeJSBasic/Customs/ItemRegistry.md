@@ -13,22 +13,22 @@ kjs创建物品是非常简单的，只需要一行就可以解决
 `create`里的第二个参数为物品类型，在下面会给大家列举出来他的物品类型和描述
 
 ## 物品类型
-|      类型参数       |   作用   |         描述         |                 示例                  |
-| :-----------------: | :------: | :------------------: | :-----------------------------------: |
-|       `basic`       | 基础物品 |          无          |                   -                   |
+|      类型参数       |   作用   |         描述         |               示例                |
+| :-----------------: | :------: | :------------------: | :-------------------------------: |
+|       `basic`       | 基础物品 |          无          |                 -                 |
 |       `basic`       | 基础物品 |          -           |    [添加食物](./ItemType/food)    |
 |    `music_disc`     |   唱片   | 可以在唱片机里播放的 | [添加唱片](./ItemType/chang-pian) |
-| `smithing_template` | 锻造模板 |          无          |                   -                   |
-|      `helmet`       |   头盔   |          无          |             [添加护甲]()              |
-|    `chestplate`     |   胸甲   |          无          |                 同上                  |
-|     `leggings`      |   护腿   |          无          |                 同上                  |
-|       `boots`       |   鞋子   |          无          |                 同上                  |
-|        `axe`        |   斧子   |          无          |             [添加工具](./ItemType/tools)              |
-|        `hoe`        |   锄头   |          无          |                 同上                  |
-|      `pickaxe`      |   镐子   |          无          |                 同上                  |
-|      `shovel`       |   铲子   |          无          |                 同上                  |
-|       `sword`       |    剑    |          无          |                 同上                  |
-|      `shears`       |   剪刀   |          无          |             [添加剪刀]()              |
+| `smithing_template` | 锻造模板 |          无          |                 -                 |
+|      `helmet`       |   头盔   |          无          |           [添加护甲]()            |
+|    `chestplate`     |   胸甲   |          无          |               同上                |
+|     `leggings`      |   护腿   |          无          |               同上                |
+|       `boots`       |   鞋子   |          无          |               同上                |
+|        `axe`        |   斧子   |          无          |   [添加工具](./ItemType/tools)    |
+|        `hoe`        |   锄头   |          无          |               同上                |
+|      `pickaxe`      |   镐子   |          无          |               同上                |
+|      `shovel`       |   铲子   |          无          |               同上                |
+|       `sword`       |    剑    |          无          |               同上                |
+|      `shears`       |   剪刀   |          无          |           [添加剪刀]()            |
 
 
 ## 通用方法参数
@@ -36,13 +36,13 @@ kjs创建物品是非常简单的，只需要一行就可以解决
 ### 常用方法
 |                             方法调用                              | 传入参数 |                   用处                    | 返回类型 |
 | :---------------------------------------------------------------: | :------: | :---------------------------------------: | :------: |
-|                          maxDamage(int)                           |    -\>    |            设置物品的最大耐久             |   this   |
-|                   food(Consumer\<FoodBuilder\>)                    |    -\>    |   [设置物品为食物](./ItemType/food)   |   this   |
-|                         maxStackSize(int)                         |    -\>    | 设置物品的最大堆叠,虽然能超过64但是不建议 |   this   |
-|                        fireResistant(bool)                        |    -\>    |             设置物品是否防火              |   this   |
-|                        displayName(string)                        |    -\>    |  设置在没有配置lang文件时直接显示的名称   |   this   |
-|                       tag(ResourceLocation)                       |    -\>    |             设置物品的tag标签             |   this   |
-|                          texture(string)                          |    -\>    |             设置物品材质路径              |   this   |
+|                          maxDamage(int)                           |   -\>    |            设置物品的最大耐久             |   this   |
+|                   food(Consumer\<FoodBuilder\>)                   |   -\>    |     [设置物品为食物](./ItemType/food)     |   this   |
+|                         maxStackSize(int)                         |   -\>    | 设置物品的最大堆叠,虽然能超过64但是不建议 |   this   |
+|                        fireResistant(bool)                        |   -\>    |             设置物品是否防火              |   this   |
+|                        displayName(string)                        |   -\>    |  设置在没有配置lang文件时直接显示的名称   |   this   |
+|                       tag(ResourceLocation)                       |   -\>    |             设置物品的tag标签             |   this   |
+|                          texture(string)                          |   -\>    |             设置物品材质路径              |   this   |
 |                           unstackable()                           |    -     |            设置物品为不可堆叠             |   this   |
 |                           burnTime(int)                           |    -     | 设置物品的可燃烧tick(默认为0则是不可燃烧) |   this   |
 | modifyAttribute(ResourceLocation,string,double,AttributeModifier) |    ~     |              物品属性修饰符               |   this   |
@@ -52,37 +52,37 @@ kjs创建物品是非常简单的，只需要一行就可以解决
 ### 物品使用时调用的方法
 |                    方法调用                    | 传入参数 |                    用处                     | 返回类型 |
 | :--------------------------------------------: | :------: | :-----------------------------------------: | :------: |
-|          use(ItemBuilder$UseCallback)          |    -\>    |            物品开始被玩家使用时             |   this   |
-| releaseUsing(ItemBuilder$ReleaseUsingCallback) |    -\>    | 当玩家没有使用完物品但中途松开鼠标右键时(?) |   this   |
-|  finishUsing(ItemBuilder$FinishUsingCallback)  |    -\>    |             当玩家使用完物品时              |   this   |
-|     useDuration(ToIntFunction\<ItemStack\>)     |    ~     |             关于物品的使用时间?             |   this   |
+|          use(ItemBuilder$UseCallback)          |   -\>    |            物品开始被玩家使用时             |   this   |
+| releaseUsing(ItemBuilder$ReleaseUsingCallback) |   -\>    | 当玩家没有使用完物品但中途松开鼠标右键时(?) |   this   |
+|  finishUsing(ItemBuilder$FinishUsingCallback)  |   -\>    |             当玩家使用完物品时              |   this   |
+|    useDuration(ToIntFunction\<ItemStack\>)     |    ~     |             关于物品的使用时间?             |   this   |
 |             useAnimation(UseAnim)              |    ~     |             物品在使用时的动画              |   this   |
 
 ### 关于渲染的方法
-|               方法调用               | 传入参数 |                 用处                 | 返回类型 |
-| :----------------------------------: | :------: | :----------------------------------: | :------: |
-|        modelJson(JsonObject)         |    -\>    | 设置模型的json(虽然但是不建议这么干) |   this   |
-|         parentModel(string)          |    ~     |          设置模型的父模型?           |   this   |
-|       textureJson(JsonObject)        |    -\>    |        设置物品的材质json ??         |   this   |
+|               方法调用                | 传入参数 |                 用处                 | 返回类型 |
+| :-----------------------------------: | :------: | :----------------------------------: | :------: |
+|         modelJson(JsonObject)         |   -\>    | 设置模型的json(虽然但是不建议这么干) |   this   |
+|          parentModel(string)          |    ~     |          设置模型的父模型?           |   this   |
+|        textureJson(JsonObject)        |   -\>    |        设置物品的材质json ??         |   this   |
 | barWidth(ToIntFunction\<ItemStack\>)  |    ~     |             关于耐久条?              |   this   |
 | barColor(Function\<ItemStack\>,Color) |    ~     |           关于耐久条颜色?            |   this   |
-|              glow(bool)              |    -\>    |        设置物品是否有附魔光效        |   this   |
-|          tooltip(Component)          |    -\>    |             物品提示内容             |   this   |
+|              glow(bool)               |   -\>    |        设置物品是否有附魔光效        |   this   |
+|          tooltip(Component)           |   -\>    |             物品提示内容             |   this   |
 
 ### 其他方法
-|                       方法调用                        |              传入参数              |        用处        |    返回类型     |
-| :---------------------------------------------------: | :--------------------------------: | :----------------: | :-------------: |
-|        hurtEnemy(Predicate\<HurtEnemyContext\>)        |                 -\>                 | 物品攻击实体生物时 |      this       |
-|                    rarity(Rarity)                     | [稀有度](../../Digression/Rarity) |   设置物品稀有度   |      this       |
-|                   getRegistryType()                   |                 -                  |    获取注册类型    | RegistryInfo<T\> |
-|        generateAssetJsons(AssetJsonGenerator)         |                 ?                  |         ?          |        -        |
-|         generateDataJsons(DataJsonGenerator)          |                 ?                  |         ?          |        -        |
-|                  name(NameCallback)                   |                 ~                  | 动态设置物品名字?  |      this       |
-|              color(int,ItemTintFunction)              |                 ?                  |         ?          |      this       |
-|                color(ItemTintFunction)                |                 ?                  |         ?          |      this       |
-|                 transformObject(Item)                 |                 ~                  |         ~          |      this       |
-| subtypes(Function\<ItemStack,Collection\<ItemStack\>\>) |                 ~                  |         ?          |      this       |
-|            containerItem(ResourceLocation)            |                 ~                  | 设置物品为容器???  |      this       |
+|                        方法调用                         |             传入参数              |        用处        |     返回类型     |
+| :-----------------------------------------------------: | :-------------------------------: | :----------------: | :--------------: |
+|        hurtEnemy(Predicate\<HurtEnemyContext\>)         |                -\>                | 物品攻击实体生物时 |       this       |
+|                     rarity(Rarity)                      | [稀有度](../../Digression/Rarity) |   设置物品稀有度   |       this       |
+|                    getRegistryType()                    |                 -                 |    获取注册类型    | RegistryInfo<T\> |
+|         generateAssetJsons(AssetJsonGenerator)          |                 ?                 |         ?          |        -         |
+|          generateDataJsons(DataJsonGenerator)           |                 ?                 |         ?          |        -         |
+|                   name(NameCallback)                    |                 ~                 | 动态设置物品名字?  |       this       |
+|               color(int,ItemTintFunction)               |                 ?                 |         ?          |       this       |
+|                 color(ItemTintFunction)                 |                 ?                 |         ?          |       this       |
+|                  transformObject(Item)                  |                 ~                 |         ~          |       this       |
+| subtypes(Function\<ItemStack,Collection\<ItemStack\>\>) |                 ~                 |         ?          |       this       |
+|             containerItem(ResourceLocation)             |                 ~                 | 设置物品为容器???  |       this       |
 
 ## 简单的注册物品轮子
 

@@ -19,8 +19,8 @@ ItemEvents.tooltip((event) =>{
 
 上面只是最简单的操作实现，当你需要一些特殊按键时才能看到的文本就需要用到下面方法
 ```js
-ItemEvents.tooltip((event) =>{
-    event.addAdvanced("diamond", (item,advanced,text) =>{
+ItemEvents.tooltip((event) => {
+    event.addAdvanced("diamond", (item, advanced, text) => {
         //我们也可以直接删掉位置的文本，直接替代它！
         //这里删除第0位是物品名的位置，所以删掉之后没有名字了
         //这里添加一个新的文本在第0的位置上，这样就有名字了
