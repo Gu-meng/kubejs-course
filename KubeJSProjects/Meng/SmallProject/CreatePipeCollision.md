@@ -10,7 +10,7 @@ const $PipeCollisionEvent = Java.loadClass("com.simibubi.create.api.event.PipeCo
 ForgeEvents.onEvent($PipeCollisionEvent.Spill, event => {
     let block = event.getState().block;
     if (block.id == "minecraft:stone"){
-        event.setState(Block.getBlock('minecraft:netherrack').defaultBlockState())
+        event.setState(Block.getBlock('minecraft:netherrack').defaultBlockState());
     }
 })
 ```

@@ -8,7 +8,7 @@ const $EntityTravelToDimensionEvent = Java.loadClass("net.minecraftforge.event.e
 ForgeEvents.onEvent($EntityTravelToDimensionEvent, event => {
     let resourceKey = event.dimension;
     if (resourceKey.getPath() == "the_nether") {
-        event.setCanceled(true)
+        event.setCanceled(true);
     }
 })
 ```
