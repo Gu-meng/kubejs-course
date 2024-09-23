@@ -19,7 +19,7 @@ StartupEvents.registry("item", event => {
 |             alwaysEdible()             |           -           |        设置为随时可食用        | 不需要消耗饱食度就可食用 |
 |              fastToEat()               |           -           |         设置为快速食用         |          吃得快          |
 |        removeEffect(MobEffect)         |       药水效果        |    食用后清除某一种药水效果    |            -             |
-|    eaten(Consumer\<FoodEatenEvent\>)     |      食用后事件       |               -                |            -             |
+|   eaten(Consumer\<FoodEatenEvent\>)    |      食用后事件       |               -                |            -             |
 | effect(ResourceLocation,int,int,float) | [effect参数](#effect) |     设置食用后给予药水效果     |            -             |
 |                build()                 |           -           | 返回该食物的`FoodProperties`类 |            -             |
 
