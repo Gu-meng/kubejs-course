@@ -7,7 +7,10 @@
 其次kjs的大部分魔改都是在一个事件里，比如监听xx事件后，从该事件内获取某个函数方法进行调用，然后魔改，这个在后面的实际操作过程中可以体会到，这个也是kjs和crt的一个大区别了
 
 ### 准备工作
-1. 首先你得需要准备一个[**`VS Code`**](https://code.visualstudio.com)(Visual Studio Code)以及他的汉化插件![chinese](/imgs/chinese.png)安装完后会让你重启VS Code, 照常重启即可
+1. 首先你得需要准备一个[**`VS Code`**](https://code.visualstudio.com)(Visual Studio Code)
+
+[VS Code安装详细讲解](/Digression/VSCodeInstallation.md)
+
 2. 在`VS Code`内安装名为`ProbeJS`的插件(该插件的实际用途可以查看百科)
 3. 在游戏内也安装`ProbeJS`模组(该模组如何使用请查看百科)
 
