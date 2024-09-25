@@ -79,7 +79,7 @@
 | PlayerEvents  |       advancement        |  当玩家获取进度时调用  |                        -                        |
 | PlayerEvents  |     inventoryOpened      |    玩家打开背包事件    |                        -                        |
 | PlayerEvents  |     inventoryClosed      |    玩家关闭背包事件    |                        -                        |
-| PlayerEvents  |     inventoryChanged     |    玩家背包变化事件    |                        -                        |
+| PlayerEvents  |     inventoryChanged     |    玩家背包变化事件    |    [链接](../KubeJSAdvanced/EventExamples/PlayerInventoryChangedEvents.md)                        |
 | PlayerEvents  |       chestOpened        |    玩家打开箱子事件    |                        -                        |
 | PlayerEvents  |       chestClosed        |    玩家关闭箱子事件    |                        -                        |
 

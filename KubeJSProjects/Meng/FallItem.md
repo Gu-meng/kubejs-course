@@ -34,6 +34,7 @@ EntityEvents.spawned("item", event => {
         let count = itemEntity.getNbt().get("Item").getInt("Count")
         // 传值
         itemFallList[itemEntity.getUuid()] = {
+            dimension: event.getLevel().getDimension(),
             y: itemEntity.getY(),
             output: value.outputItem,
             count: count,
@@ -44,26 +45,25 @@ EntityEvents.spawned("item", event => {
 
 LevelEvents.tick(event => {
     if (event.server.tickCount % 5 != 0) return
-    event.getLevel().getEntities().forEach(entity => {
-        // 判断物品类型
-        if (entity.type != "minecraft:item") return
-        for (let key in itemFallList) {
-            let fallValue = itemFallList[key];
-            if (entity.getUuid() == key) {
+    if (Object.keys(itemFallList).length == 0) return
+    for (let key in itemFallList) {
+        let fallValue = itemFallList[key];
+        if (fallValue.dimension == event.getLevel().getDimension()) {
+            try {
+                let entity = event.getLevel().getEntity(key)
                 if (entity.onGround()) {
-                    // 判断下落高度
                     if (fallValue.y - entity.getY() >= fallValue.spaceBetween) {
-                        // 重新设置物品
                         entity.setItem(Item.of(fallValue.output, fallValue.count))
                     }
-                    // 解开无法合并和无法捡起
                     entity.pickUpDelay = 20;
-                    // 删除下落方块数据
                     delete itemFallList[key]
                 }
+            } catch (e) {
+                console.warn(e);
+                delete itemFallList[key]
             }
         }
-    })
+    }
 })
 ```
 
