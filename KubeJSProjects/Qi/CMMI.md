@@ -30,7 +30,7 @@
 
 ## 文件下载
 
-[文件下载](/Code/Projects/CMMI)
+[文件下载](https://gitee.com/gumengmengs/kubejs-course/tree/main/Code/Projects/CMMI/kubejs/)
 
 ## 参考文献
 
