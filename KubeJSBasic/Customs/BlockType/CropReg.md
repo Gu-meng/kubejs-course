@@ -5,17 +5,17 @@
 |                       方法名                        | 参数  |                作用                |      返回类型      |
 | :-------------------------------------------------: | :---: | :--------------------------------: | :----------------: |
 |                     age(number)                     |  ->   |           设置作物的阶段           |        this        |
-| age(number,Consumer<CropBlockBuilder$ShapeBuilder>) |  ->   |     设置作物的每个阶段的碰撞箱     |        this        |
+| age(number,Consumer\<CropBlockBuilder$ShapeBuilder\>) |  ->   |     设置作物的每个阶段的碰撞箱     |        this        |
 |                      crop(any)                      |   ?   |     添加作物为百分百概率输出?      |        this        |
 |                  crop(any,number)                   |  ->   |          添加作物掉落概率          |        this        |
-|    bonemeal(ToIntFunction<RandomTickCallbackJS>)    |   ?   |            骨粉催化事件            |        this        |
-|  growTick(ToDoubleFunction<RandomTickCallbackJS>)   |  ->   |           随机刻选中事件           |        this        |
+|    bonemeal(ToIntFunction\<RandomTickCallbackJS\>)    |   ?   |            骨粉催化事件            |        this        |
+|  growTick(ToDoubleFunction\<RandomTickCallbackJS\>)   |  ->   |           随机刻选中事件           |        this        |
 |     survive(CropBlockBuilder$SurviveCallback_)      |  ->   |          设置生长条件事件          |        this        |
 |                   dropSeed(bool)                    |  ->   |    设置作物收割时候是否掉落种子    |        this        |
 |               translationKey(string)                |  ->   |       设置对象的对应翻译key        | BuilderBase<Block> |
 |               formattedDisplayName()                |   -   |     使displayName覆盖语言文件      | BuilderBase<Block> |
 |           formattedDisplayName(Component)           |   -   |     直接设置覆盖语言文件的文本     | BuilderBase<Block> |
-|      dynamicMapColor(Function<BlockState,any>)      |   ~   | 设置块的每个状态在地图上的表现形式 |    BlockBuilder    |
+|      dynamicMapColor(Function\<BlockState,any\>)      |   ~   | 设置块的每个状态在地图上的表现形式 |    BlockBuilder    |
 |                  toString(string)                   |  ->   |      表面意思(大概率不常调用)      |       string       |
 |                   createObject()                    |   -   |                 ?                  |         ?          |
 |              createAdditionalObjects()              |   -   |           创建额外对象?            |        void        |
@@ -23,7 +23,7 @@
 |                    wait(number)                     |   -   |                 ?                  |        void        |
 |              getTranslationKeyGroup()               |   -   |                 ~                  |        void        |
 |             getBuilderTranslationKey()              |   -   |                 ~                  |        void        |
-|         【static】 createShape(List<AABB>)          |   ~   |                 ?                  |     VoxelShape     |
+|         【static】 createShape(List\<AABB\>)          |   ~   |                 ?                  |     VoxelShape     |
 |                        get()                        |   -   |                 ?                  |       Block        |
 |                     getClass()                      |   -   |               获取类               |     typeof any     |
 |                setWaterlogged(bool)                 |  ->   |             **已过时**             |         -          |
@@ -82,7 +82,7 @@ StartupEvents.registry("block", event => {
 
 其中**2**代表到达age，前面三个**0**代表着最小的`x,y,z`，后面的`16,12,16`代表着最大的碰撞箱`x,y,z`，这里的碰撞下不同于方块里的`box`，设置`box`是为了将**方块建模**进行设置碰撞，在这里是为了设置植物的高度和大小的显示碰撞
 
-`growTick` 代表被随机刻选中时，作物是否能够成长一级，计算方式为 `random.nextInt((25 / 返回值) + 1)` 进行计算随机数 在这里传上25也就是 随机数最大生成0和1，在原版的逻辑中除了0以外的数值都可以生长
+`growTick` 代表被随机刻选中时，作物是否能够成长一级，计算方式为 `random.nextInt((25 / 返回值) + 1)` 进行计算随机数 在这里传上25也就是 随机数最大生成0和1，在原版的逻辑中除了0以外的数值都无法生长
 
 `bonemeal` 代表着骨粉催植物事件，返回参数为作物被催熟的等级 返回1则作物age增加1 返回0则不变 这里用`rtc.random.nextInt(2)`来随机0或者1来作为返回值
 
