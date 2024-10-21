@@ -122,6 +122,7 @@
   * [服务器签到](/KubeJSProjects/Meng/SignIn.md)
   * [注册AE存储元件和对应的组件](/KubeJSProjects/Meng/RegComponent&Storage.md)
   * [唱片转化为物品](/KubeJSProjects/Meng/JukeboxToItem.md)
+  
   * [孤梦的小项目](/KubeJSProjects/Meng/SmallProject/README.md)
     * [自动适配台阶合成对应块](/KubeJSProjects/Meng/SmallProject/SlabPairBlock.md)
     * [原版修改流体对撞产生块](/KubeJSProjects/Meng/SmallProject/McFluidPlaceBlock.md)
@@ -129,3 +130,5 @@
     * [禁止实体穿越指定维度](/KubeJSProjects/Meng/SmallProject/EntityTravelToDimension.md)
     * [物品右键获取该物品的方块tag](/KubeJSProjects/Meng/SmallProject/BlockItemGetBlockTag.md)
     * [获取所有配方json并保存为文件](/KubeJSProjects/Meng/SmallProject/RecipesJsonInFile.md)
+  * [栗子的小项目](/KubeJSProjects/PrizOwO/SmallProject/README.md)
+    * [玩家对生物造成伤害显示血量](/KubeJSProjects/PrizOwO/SmallProject/HitHealthShow.md)
