@@ -4,9 +4,11 @@
 >
 > ![wolf](/imgs/Schema/wolf.png)
 
-在1.20的KubeJS添加了一个`recipeSchemaRegistry`启动事件`Startup`, 这个事件可以让你给某些没有适配KubeJS的配方类型添加简单的适配, 例如`createmetallurgy(机械动力: 冶金学)`, 这个Mod没有添加KubeJS适配
+在1.20的KubeJS添加了一个`recipeSchemaRegistry`启动事件`Startup`, 这个事件可以让你给某些没有适配KubeJS的配方类型添加简单的适配, 例如`createmetallurgy(机械动力: 冶金学)`, 这个Mod没有添加KubeJS
 
 > 我找作者问过了, 他说真的没时间学科比吉斯(KubeJS)了
+
+> 在写这篇教程的时候, 这个Mod还没有进行KubeJS适配, 现在的KubeJS适配还是我(柒月)向作者进行提交的KubeJS适配代码
 
 这个Mod内有个类似于[**匠魂**](https://www.mcmod.cn/class/3725.html)的铸造台配方, 在Json格式下是这样
 
@@ -34,7 +36,7 @@
 
 ```js
 ServerEvents.recipes((event) => {
-	const { createmetallurgy } = event.recipe
+	let { createmetallurgy } = event.recipe
 
 	createmetallurgy.casting_in_table("create:brass_sheet", [
 		"createmetallurgy:graphite_plate_mold",
@@ -114,7 +116,7 @@ new Schema("createmetallurgy:casting_in_basin")
 
 ```js
 ServerEvents.recipes((event) => {
-	const { createmetallurgy } = event.recipes
+	let { createmetallurgy } = event.recipes
 
 	createmetallurgy.casting_in_basin("minecraft:brick", [
 		Fluid.of("minecraft:lava", 90),
@@ -139,7 +141,7 @@ ServerEvents.recipes((event) => {
 
 ```js
 ServerEvents.recipes((event) => {
-	const { createmetallurgy } = event.recipes
+	let { createmetallurgy } = event.recipes
 
 	createmetallurgy.casting_in_basin("minecraft:brick", [
 		Fluid.of("minecraft:lava", 90),
