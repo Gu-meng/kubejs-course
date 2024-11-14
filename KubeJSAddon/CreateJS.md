@@ -123,7 +123,7 @@ create.pressing([
 ```js
 // 混合搅拌 - 多个输入
 create.mixing("minecraft:grass_block", [
-	Fluid.of("minecrft:water", 500),
+	Fluid.of("minecraft:water", 500),
 	"minecraft:dirt"
 ])
 

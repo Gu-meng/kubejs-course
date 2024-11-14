@@ -6,57 +6,38 @@ KubeJS只做了自己的适配，并没有适配其他任何合成方式，包�
 所以这个地方得注意调用的是`shapeless`和`shaped`，或者`recipes.kubejs.shaped`和`recipes.kubejs.shapeless`
 
 关于为什么原版的水桶在合成表里为什么可以返回桶请看 --> [设置物品合成返回物品](./ItemRecipeReturnItem.md)
-## 合成附带nbt modifyResult
+## 动态操作合成 modifyResult
 下面代码是使用工作台里使用钻石剑+附魔书进行合成出带附魔效果的,如果有更高等级的附魔将直接覆盖低等级附魔
 
 这段代码只是示范modifyResult该如何去使用提供的一个示例，具体使用场景可更改
 ```js
-ServerEvents.recipes((event) => {
-	event.shapeless(Item.of('minecraft:diamond_sword'), [
-		Item.of('minecraft:enchanted_book'),
-		Item.of('minecraft:diamond_sword')
-	]).modifyResult((/**@type {$ModifyRecipeCraftingGrid_}*/grid,/**@type {$ItemStack_} */item) => {
-		let itemBook = grid.find("minecraft:enchanted_book")
-		let diamond_sword = grid.find("minecraft:diamond_sword")
-		let dsEns = diamond_sword.getEnchantments()
-		if (dsEns.size() == 0) {
-			return diamond_sword.enchant(itemBook.getEnchantments())
-		}
-		let ibEns = itemBook.getEnchantments()
-		let i = 0;
-		ibEns.forEach((ikey, ivalue) => {
-			dsEns.forEach((key, value) => {
-				if (key == ikey) {
-					if (value < ivalue) {
-						/**
-                         * @type {$ListTag_}
-                         */
-						let dimEns = diamond_sword.getNbt().get("Enchantments")
-						dimEns.forEach(value => {
-							if (value["id"] == key) {
-								value["lvl"] = ivalue
-							}
-						})
-					}
-				} else {
-					i++
-				}
-				if (i == dsEns.size()) {
-					i = 0
-					diamond_sword = diamond_sword.enchant(ikey, ivalue)
-				}
-			})
-
-		})
-		return diamond_sword
-	})
+ServerEvents.recipes(event=>{
+    event.recipes.kubejs.shaped('minecraft:soul_torch',[
+        ['minecraft:torch','minecraft:torch','minecraft:torch'],
+        ['minecraft:torch','minecraft:stone','minecraft:torch'],
+        ['minecraft:torch','minecraft:torch','minecraft:torch']
+    ]).modifyResult((inputItemGrid,outputItem)=>{
+        let stone = inputItemGrid.find("stone")
+        let items = inputItemGrid.findAll("torch");
+        for (let i = 0; i < items.length; i++) {
+            if (!items[i].hasEnchantment("looting",2)){
+                return "air"
+            }
+        }
+        if (Math.random() < 0.5){
+           let ci =  items[0].copy();
+           ci.count = 1;
+           return ci
+        } 
+        return outputItem;
+    })
 })
 ```
-`modifyResult`里的第一个参数**grid**为合成台里的物品,第二个参数**item**为输出物品，最后需要返回一个物品为输出物品(return ·ItemStack·)
+`modifyResult`里的第一个参数**inputItemGrid**为合成台里的物品,第二个参数**outputItem**为输出物品，最后需要返回一个物品为输出物品(return ·ItemStack·)
 
-`grid.find(物品id)`是寻找合成台里的物品，返回为 **·ItemStack·**
+`inputItemGrid.find(物品id)`是寻找合成台里的物品，返回为 **·ItemStack·**
 
-`·ItemStack·.getEnchantments()`获取物品的所有附魔，返回为 **·Map\<(string), (integer)\>·**
+`·ItemStack·.hasEnchantment(附魔id,等级)`获取物品的所有附魔，返回为 bool
 
 `·ItemStack·.enchant(附魔类型id,等级)`给物品附魔,这里并不会直接改变物品属性所以需要 ***使用变量接收返回参数***
 
