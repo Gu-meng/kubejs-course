@@ -34,6 +34,7 @@
     * [添加方块示例](/KubeJSBasic/Customs/BlockType/README.md)
       * [添加作物](/KubeJSBasic/Customs/BlockType/CropReg.md)
     * [添加流体](/KubeJSBasic/Customs/LiquidRegistry.md)
+    * [添加工具材料或盔甲材料](/KubeJSBasic/Customs/TierRegistry.md)
     * [添加附魔](/KubeJSBasic/Customs/EnchantRegistry.md)
     * [添加药水](/KubeJSBasic/Customs/PotionEffectsRegistry.md) 
     * [添加药水效果](/KubeJSBasic/Customs/PotionRegistry.md) 
