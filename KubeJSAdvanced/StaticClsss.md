@@ -5,17 +5,17 @@ kubejs提供了以下的全局静态类和对应的方法
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
 | :--: | :--: | :--: | :--: | :--: |
 | toTitleCase(string) | -> | 将传入字符串第一个文本转化为大写 | 处理后的字符串 string | 除了"a", "an", "the", "of", "on", "in", "and", "or", "but" 和 "for" |
-| getStat(ResourceLocation) | ~ | ~ | Stat\<ResourceLocation\> | 后续补充 |
+| getStat(ResourceLocation) | ~ | ~ | Stat<ResourceLocation\> | 后续补充 |
 | snakeCaseToTitleCase(string) | -> | 将蛇形命名转换为标题大小写 | 处理后的字符串 string |  如a_bc_def 转为 A Bc Def |
 | newCountingMap() | - | 获取一个新的CountingMap | CountingMap | - |
 | toTitleCase(string,bool) | -> | 设置会true后将上面除了的内容也会进行大写 | 理后的字符串 string | - |
 | parseDouble(any,number) | -> | 将第一个参数转化为Double类型，如果失败了，则返回第二个数 | number | - |
 | getRandom() | - | 获取Random类 | Random | - |
-| newList() | - | 获取一个列表 | List\<T\> | - |
-| rollChestLoot(ResourceLocation) | 战利品表id | 获取指定战利品表里的战利品数组 | List\<ItemStack\> | - |
+| newList() | - | 获取一个列表 | List<T\> | - |
+| rollChestLoot(ResourceLocation) | 战利品表id | 获取指定战利品表里的战利品数组 | List<ItemStack\> | - |
 | newRandom(number) | -> | 用一个数字当作种子生成一个Random类 | Random | - |
 | getRegistryIds(ResourceLocation) | -> | 获取指定注册表里的的所有id | List<ResourceLocation\> | - |
-| emptyList() | - | 获取一个不可变的空列表? | List<T> | - |
+| emptyList() | - | 获取一个不可变的空列表? | List<T\> | - |
 | getSystemTime() | - | 获取当前系统时间，以毫秒为单位 | number | - |
 | supplyAsync(Supplier<any\>) | ~ | ~ | CompletableFuture<any\> | 后续补充 |
 | id(string,string) | -> | 将字符串转为ResourceLocation | ResourceLocation | - |
@@ -28,7 +28,7 @@ kubejs提供了以下的全局静态类和对应的方法
 | getSound(ResourceLocation) | id | 从id中获取SoundEvent | SoundEvent | - |
 | randomOf(Random,Collection<any\>) | ~ | 使用传入的参数从列表中获取随机对象? | any | ? |
 | newMap() | - | 获取一个map | Map<any, any> | - |
-| getRegistry(ResourceLocation) | id | 通过id获取对应的注册信息 | RegistryInfo<any> | - |
+| getRegistry(ResourceLocation) | id | 通过id获取对应的注册信息 | RegistryInfo<any\> | - |
 | particleOptions(any) | ~ | ~ | ParticleOptions | - |
 | copy(any) | -> | 复制一份传入的对象，如果不可以则返回本身 | any | - |
 | regex(string,number) | string pattern / number flags | ~ | Pattern | - |
@@ -39,7 +39,7 @@ kubejs提供了以下的全局静态类和对应的方法
 | queueIO(Runnable) | -> | 立即在try-catch块中运行传递的可运行函数，并在它抛出异常时记录异常? | void | - |
 | parseInt(any,number) | -> | 将第一个参数转化为整数，如果失败则返回第二个参数 | number | - |
 | getServer() | - | 获取游戏服务端，如果是在没有服务器的地方调用则为null(startup和client) | MinecraftServer | - |
-| rollChestLoot(ResourceLocation,Entity) | 战利品表id，触发实体 | 用指定实体生成一个战利品表物品列表 | List<ItemStack> | 不一定是箱子 |
+| rollChestLoot(ResourceLocation,Entity) | 战利品表id，触发实体 | 用指定实体生成一个战利品表物品列表 | List\<ItemStack\> | 不一定是箱子 |
 
 ## JsonIO
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
@@ -53,7 +53,7 @@ kubejs提供了以下的全局静态类和对应的方法
 | writeJsonHash(DataOutputStream,JsonElement) | ? | ~ | void | 后续测试 |
 | parseRaw(string) | ? | ? | JsonElement | 后续测试 |
 | write(path,JsonObject) | -> | 将json对象写入到指定路径的文件里 | void | 一定要是json对象，不能是数组 |
-| read(path) | -> | 读取指定路径的文件 | Map<any,any> | 建议使用readJson |
+| read(path) | -> | 读取指定路径的文件 | Map<any,any\> | 建议使用readJson |
 | toArray(JsonElement) | -> | 将JsonElement转为JsonArray | JsonArray | - |
 | parse(string) | -> | ? | any | 后续测试 |
 | toPrimitive(JsonElement) | -> | ? | any | 后续测试 |
@@ -66,11 +66,11 @@ kubejs提供了以下的全局静态类和对应的方法
 | 方法 | 方法参数 | 方法作用 | 方法返回参数 | 备注 | 
 | :--: | :--: | :--: | :--: | :--: |
 | asLong(number,number,number) | 依次顺序为X,Y,Z坐标 | 通过坐标获取对应的数值 | number | - |
-| betweenClosed(n1,n2,n3,n4,n5,n6) | 依次顺序为x1,y1,z1,x2,y2,z2 | 通过两个坐标获取该区域内的所有坐标 | Iterable<BlockPos> | - |
+| betweenClosed(n1,n2,n3,n4,n5,n6) | 依次顺序为x1,y1,z1,x2,y2,z2 | 通过两个坐标获取该区域内的所有坐标 | Iterable<BlockPos\> | - |
 | betweenClosedStream(BlockPos,BlockPos) | - | 同上 | Stream<BlockPos\> | - |
 | breadthFirstTraversal(BlockPos,number,BiConsumer<BlockPos, Consumer<BlockPos\>\>,Predicate<BlockPos\>) | 坐标，最大距离，-，回调用于处理每个遍历到的方块位置 | 按广度优先的顺序遍历周围的方块 | number | - |
 | containing(Position) | -> | 根据Position返回BlockPos | BlockPos | - |
-| findClosestMatch(BlockPos,number,number,Predicate<BlockPos\>) | ~ | ~ | Optional<BlockPos> | - |
+| findClosestMatch(BlockPos,number,number,Predicate<BlockPos\>) | ~ | ~ | Optional<BlockPos\> | - |
 | getFlatIndex(number) | ~ | ~ | number | - |
 | getX(number) | -> | 获取对应值 | number | - |
 | getY(number) | -> | 获取对应值 | number | - |
@@ -79,11 +79,11 @@ kubejs提供了以下的全局静态类和对应的方法
 | offset(number,number,number) | ~ | ~ | number | - |
 | offset(number,Direction) | ~ | ~ | number | - |
 | offsetCodec(number) | ~ | ~ | Codec<Vec3i> | - |
-| randomBetweenClosed(RandomSource,n1,n2,n3,n4,n5,n6) | -> | 在一个区域内随机生成坐标 | Iterable<BlockPos> | - |
-| randomInCube(RandomSource,number,BlockPos,number) | ? | 通过一个坐标中心点向外延申到指定距离的方块区域内生成坐标? | Iterable<BlockPos> | - |
-| spiralAround(BlockPos,number,Direction,Direction) | ~ | 按照螺旋式路径遍历周围的方块位置 | Iterable<Internal.BlockPos$MutableBlockPos> | - |
-| withinManhattan(BlockPos,number,number,number) | -> | 获取在曼哈顿距离范围内的所有坐标 | Iterable<BlockPos> | - |
-| withinManhattanStream(BlockPos,number,number,number) | -> | 同上 | Stream<BlockPos> | - |
+| randomBetweenClosed(RandomSource,n1,n2,n3,n4,n5,n6) | -> | 在一个区域内随机生成坐标 | Iterable<BlockPos\> | - |
+| randomInCube(RandomSource,number,BlockPos,number) | ? | 通过一个坐标中心点向外延申到指定距离的方块区域内生成坐标? | Iterable<BlockPos\> | - |
+| spiralAround(BlockPos,number,Direction,Direction) | ~ | 按照螺旋式路径遍历周围的方块位置 | Iterable<BlockPos$MutableBlockPos\> | - |
+| withinManhattan(BlockPos,number,number,number) | -> | 获取在曼哈顿距离范围内的所有坐标 | Iterable<BlockPos\> | - |
+| withinManhattanStream(BlockPos,number,number,number) | -> | 同上 | Stream<BlockPos\> | - |
 
 ## Block 
 ## Vec3d
@@ -228,9 +228,11 @@ kubejs提供了以下的全局静态类和对应的方法
 | NETHER_SPROUTS | 下界苗 |
 
 ## Stats
-使用方法简单示例1：Utils.server.getPlayer("gu__meng").getStats().get(Stats.BLOCK_MINED.get(Block.getBlock("stone")))
+使用方法简单示例1：
+```Utils.server.getPlayer("gu__meng").getStats().get(Stats.BLOCK_MINED.get(Block.getBlock("stone")))```
 
-使用方法简单示例2：Utils.server.getPlayer("gu__meng").getStats().get(Stats.SWIM_ONE_CM)
+使用方法简单示例2：
+```Utils.server.getPlayer("gu__meng").getStats().get(Stats.SWIM_ONE_CM)```
 
 | 状态常量 | 描述 | 备注 |
 | :--: | :--: | :--: |
