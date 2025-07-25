@@ -24,17 +24,17 @@ kubejs提供了以下的全局静态类和对应的方法
 | snakeCaseToCamelCase(string) | -> | 将蛇形命名转化为驼峰命名 | 处理后的字符串 string | 如 a_bc_def 转为 aBcDef |
 | findCreativeTab(ResourceLocation) | id | 获取该id的所在创造物品栏 | CreativeModeTab | - |
 | emptyMap() | - | 获取一个空的不可变的map? | Map<K, V\> | - |
-| expiringLazy(Supplier<T\>,number) | ~ | ~ | Lazy<T> | 后续补充 | 
+| expiringLazy(Supplier<T\>,number) | ~ | ~ | Lazy<T\> | 后续补充 | 
 | getSound(ResourceLocation) | id | 从id中获取SoundEvent | SoundEvent | - |
 | randomOf(Random,Collection<any\>) | ~ | 使用传入的参数从列表中获取随机对象? | any | ? |
-| newMap() | - | 获取一个map | Map<any, any> | - |
+| newMap() | - | 获取一个map | Map<any, any\> | - |
 | getRegistry(ResourceLocation) | id | 通过id获取对应的注册信息 | RegistryInfo<any\> | - |
 | particleOptions(any) | ~ | ~ | ParticleOptions | - |
 | copy(any) | -> | 复制一份传入的对象，如果不可以则返回本身 | any | - |
 | regex(string,number) | string pattern / number flags | ~ | Pattern | - |
 | id(string) | -> | 将字符串直接包装成ResourceLocation | ResourceLocation | - |
 | regex(any) | -> | ~ | Pattern | - |
-| runAsync(Runnable) | -> | ~ | CompletableFuture<void> | - |
+| runAsync(Runnable) | -> | ~ | CompletableFuture<void\> | - |
 | parseBlockState(any) | -> | 从输入内容中解析方块状态可能会抛出无效输入 | BlockState | - |
 | queueIO(Runnable) | -> | 立即在try-catch块中运行传递的可运行函数，并在它抛出异常时记录异常? | void | - |
 | parseInt(any,number) | -> | 将第一个参数转化为整数，如果失败则返回第二个参数 | number | - |
@@ -78,7 +78,7 @@ kubejs提供了以下的全局静态类和对应的方法
 | of(number) | 坐标数值（asLong获取的这种数字数值 | - | BlockPos | - |
 | offset(number,number,number) | ~ | ~ | number | - |
 | offset(number,Direction) | ~ | ~ | number | - |
-| offsetCodec(number) | ~ | ~ | Codec<Vec3i> | - |
+| offsetCodec(number) | ~ | ~ | Codec<Vec3i\> | - |
 | randomBetweenClosed(RandomSource,n1,n2,n3,n4,n5,n6) | -> | 在一个区域内随机生成坐标 | Iterable<BlockPos\> | - |
 | randomInCube(RandomSource,number,BlockPos,number) | ? | 通过一个坐标中心点向外延申到指定距离的方块区域内生成坐标? | Iterable<BlockPos\> | - |
 | spiralAround(BlockPos,number,Direction,Direction) | ~ | 按照螺旋式路径遍历周围的方块位置 | Iterable<BlockPos$MutableBlockPos\> | - |
