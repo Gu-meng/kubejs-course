@@ -143,5 +143,6 @@
     * [双开门](/KubeJSProjects/Meng/SmallProject/DoubleDoor.md)
     * [检测玩家第一次进游戏](/KubeJSProjects/Meng/SmallProject/playerInGameOne.md)
     * [获取所有配方json并保存为文件](/KubeJSProjects/Meng/SmallProject/RecipesJsonInFile.md)
+    * [匠魂3获取所有强化属性](/KubeJSProjects/Meng/SmallProject/TicGetModifier.md)
   * [栗子的小项目](/KubeJSProjects/PrizOwO/SmallProject/README.md)
     * [玩家对生物造成伤害显示血量](/KubeJSProjects/PrizOwO/SmallProject/HitHealthShow.md)
