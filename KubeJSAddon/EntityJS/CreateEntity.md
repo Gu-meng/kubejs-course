@@ -56,7 +56,7 @@ StartupEvents.registry('entity_type', event => {
 | setBlockJumpFactor(Function\<LivingEntity,any\>) | ~ | 设置实体的跳跃因子[^16] |  猜测：实体在跳跃时相对于方块高度的跳跃倍数 |
 | setMaxFallDistance(Function\<LivingEntity, any\>) | ~ | 设置实体的在下落多少格会收到伤害[^17] |   **等示例** |
 | animationResource(Function\<T,any\>) | ~ | 设置一个function来确定动画播放资源[^18] | **等示例**，默认返回`<namespace>:animations/<path>.animation.json` |
-| 
+| 好像还没写完先占位吧 | 好像还没写完先占位吧 | 好像还没写完先占位吧 | 好像还没写完先占位吧 |
 
 
 #### 实体种类
@@ -100,9 +100,6 @@ StartupEvents.registry('entity_type', event => {
 [^15]: Sets the jump boost power for the entity.
 [^16]: Sets the block jump factor for the entity.
 [^17]: Sets the minimum fall distance for the entity before taking damage.
-[^18]:
-[^19]:
-[^20]:
 
 
 ## 独有的方法
