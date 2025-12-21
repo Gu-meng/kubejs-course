@@ -74,7 +74,27 @@ StartupEvents.registry("item", event => {
 
 在游戏内也可以和原版一样`shift+右键`将组件和对应的框拆开
 
-汉化和贴图和正常注册物品流程一样
+汉化和正常注册物品流程一样
+
+## 关于资源包
+这里使用的自定义创建物品，所以在资源包创建时会有所不同
+
+首先得在路径`/kubejs/assets/modid/models/item`里创建一个以物品id为名字的json文件
+
+里面填写内容为
+```json
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "modid:item/itemid"
+    }
+}
+```
+
+这里一定要替换掉上面代码里的modid和itemid，换成你自己的物品id名称
+
+然后再在`/kubejs/assets/modid/textures/item`里创建你的物品贴图就可以了
+
 
 ## 我该如何使用上方代码
 孤梦已经为你造好了轮子，你只需要调用`regCellComponent`这个方法然后往里面传参，剩下的就是重启游戏就可以了
